@@ -1,5 +1,4 @@
 ---
-import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import ViewTransitions from "astro/components/ViewTransitions.astro";
 import "../styles/global.css";
@@ -17,16 +16,14 @@ const { pageTitle } = Astro.props;
     <ViewTransitions />
     <style>
       h1 {
-        color: purple;
+        color: white;
         font-size: 4rem;
       }
     </style>
   </head>
   <body>
     <Header />
-    <h1 transition:animate="slide">{pageTitle}</h1>
     <slot />
-    <Footer />
     <script>
       import "../scripts/menu.js";
     </script>
