@@ -64,3 +64,9 @@ header {
   background-color: var(--card);
   border: 1px solid var(--card);
 }
+
+#profile-pic {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
