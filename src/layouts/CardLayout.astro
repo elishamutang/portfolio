@@ -2,6 +2,16 @@
 const frontmatter = Astro.props;
 ---
 
+<style>
+  .card {
+    align-items: flex-start;
+  }
+
+  h1 {
+    margin-bottom: 0.5rem;
+  }
+</style>
+
 <div class="card">
   <h1>{frontmatter.title}</h1>
   <slot />
