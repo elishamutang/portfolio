@@ -1,8 +1,14 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Card from "../components/Card.astro";
+import Profile from "../components/Profile.astro";
+import profilePic from "../assets/profile-pic.jpeg";
+
+const name = "Elisha Mutang";
+const title = "Software Developer";
+const pictureAlt = "profile-picture";
+const pictureId = "profile-pic";
 ---
 
 <BaseLayout>
-  <Card />
+  <Profile picture={profilePic} pictureAlt={pictureAlt} pictureId={pictureId} name={name} />
 </BaseLayout>
