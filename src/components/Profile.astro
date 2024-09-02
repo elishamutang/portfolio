@@ -1,0 +1,17 @@
+---
+import { Image } from "astro:assets";
+
+const frontmatter = Astro.props;
+---
+
+<style>
+  h1 {
+    color: white;
+    margin: 0;
+  }
+</style>
+
+<div class="card">
+  <Image src={frontmatter.picture} alt={frontmatter.pictureAlt} id={frontmatter.pictureId} />
+  <h1>{frontmatter.name}</h1>
+</div>

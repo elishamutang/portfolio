@@ -1,0 +1,8 @@
+---
+const frontmatter = Astro.props;
+---
+
+<div class="card">
+  <h1>{frontmatter.title}</h1>
+  <slot />
+</div>
