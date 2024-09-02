@@ -3,6 +3,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import profilePic from "../assets/profile-pic.jpeg";
 import CardLayout from "../layouts/CardLayout.astro";
 
+import JavascriptIcon from "../icons/JavascriptIcon.astro";
+import HtmlIcon from "../icons/HtmlIcon.astro";
+import CssIcon from "../icons/CSSIcon.astro";
+import AstroIcon from "../icons/AstroIcon.astro";
+
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 
@@ -41,9 +46,13 @@ const pictureId = "profile-pic";
     background-color: hsl(220, 60%, 40%);
   }
 
-  [data-icon] {
+  .icon {
     font-size: 4rem;
-    color: black;
+  }
+
+  .tools {
+    display: flex;
+    gap: 1rem;
   }
 </style>
 
@@ -63,6 +72,11 @@ const pictureId = "profile-pic";
     </p>
   </CardLayout>
   <CardLayout title="My Toolbox">
-    <Icon name="skill-icons:javascript" />
+    <div class="tools">
+      <JavascriptIcon class="icon" />
+      <HtmlIcon class="icon" />
+      <CssIcon class="icon" />
+      <AstroIcon class="icon" />
+    </div>
   </CardLayout>
 </BaseLayout>
