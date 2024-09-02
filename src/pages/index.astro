@@ -1,7 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Profile from "../components/Profile.astro";
 import profilePic from "../assets/profile-pic.jpeg";
+import CardLayout from "../layouts/CardLayout.astro";
+
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
 
 const name = "Elisha Mutang";
 const title = "Software Developer";
@@ -9,6 +12,57 @@ const pictureAlt = "profile-picture";
 const pictureId = "profile-pic";
 ---
 
+<style>
+  h2 {
+    color: white;
+    margin: 0;
+  }
+
+  p {
+    color: hsl(0, 0%, 70%);
+    letter-spacing: 0.05rem;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .profile {
+    gap: 0.5rem;
+  }
+
+  sup {
+    font-size: 0.8rem;
+  }
+
+  strong {
+    color: hsl(0, 0%, 100%);
+  }
+
+  .title {
+    background-color: hsl(220, 60%, 40%);
+  }
+
+  [data-icon] {
+    font-size: 4rem;
+    color: black;
+  }
+</style>
+
 <BaseLayout>
-  <Profile picture={profilePic} pictureAlt={pictureAlt} pictureId={pictureId} name={name} />
+  <div class="card profile">
+    <Image src={profilePic} alt={pictureAlt} id={pictureId} />
+    <h1>{name}</h1>
+  </div>
+  <div class="card title">
+    <h2>{title}</h2>
+  </div>
+  <CardLayout title="Who Am I?">
+    <p>
+      A mechanical engineer <i>turned </i>software developer from Australia. <br />
+      I enjoy designing, problem-solving, and League of Legends <sup>(I main Katarina)</sup>.<br />
+      This is my <strong>official</strong> portfolio where you can check out my projects and also be in touch with me!
+    </p>
+  </CardLayout>
+  <CardLayout title="My Toolbox">
+    <Icon name="skill-icons:javascript" />
+  </CardLayout>
 </BaseLayout>
