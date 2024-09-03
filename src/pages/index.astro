@@ -13,7 +13,8 @@ const pictureId = "profile-pic";
 ---
 
 <style>
-  h2 {
+  h2,
+  h3 {
     color: white;
     margin: 0;
   }
@@ -40,6 +41,12 @@ const pictureId = "profile-pic";
   .title {
     background-color: hsl(220, 60%, 40%);
   }
+
+  span {
+    font-size: 1rem;
+    color: hsl(0, 0%, 50%);
+    margin-left: 0.2rem;
+  }
 </style>
 
 <BaseLayout>
@@ -64,4 +71,9 @@ const pictureId = "profile-pic";
   <CardLayout title="My Toolbox">
     <Toolbox />
   </CardLayout>
+  <CardLayout title="Education">
+    <h3>The Odin Project <span>2023</span></h3>
+    <h3>Curtin University <span>2018 - 2022</span></h3>
+  </CardLayout>
+  <br />
 </BaseLayout>
