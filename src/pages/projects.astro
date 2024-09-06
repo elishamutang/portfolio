@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogPost from "../components/BlogPost.astro";
+import CardLayout from "../layouts/CardLayout.astro"
+
+import BattleShipIcon from "../icons/BattleshipIcon.astro"
+
+import "../styles/global.css";
+
+const allPosts = await Astro.glob("./posts/*.md");
+const pageTitle = "Projects";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <CardLayout title="Battleship">
+    <BattleShipIcon class="icon" style="color: white"/>
+  </CardLayout>
+</BaseLayout>
