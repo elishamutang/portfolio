@@ -1,5 +1,5 @@
 ---
-import Navigation from "./Navigation.astro";
+const frontmatter = Astro.props;
 ---
 
 <style>
@@ -10,6 +10,10 @@ import Navigation from "./Navigation.astro";
 
 <header>
   <nav>
-    <Navigation />
+    <div class="nav-links">
+      <a href="/">Home </a>
+      <a href=" projects">Projects</a>
+      <a href="/contact">Contact</a>
+    </div>
   </nav>
 </header>
