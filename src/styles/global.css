@@ -33,7 +33,7 @@ header {
   position: sticky;
   top: 0;
   background-color: transparent;
-  backdrop-filter: blur(5px) brightness(0.6);
+  backdrop-filter: blur(5px) brightness(0.2);
   display: flex;
   justify-content: center;
 }
@@ -42,7 +42,6 @@ header {
   display: flex;
   gap: 0.5rem;
   padding: 0.5rem;
-  /* border: 1px solid red; */
   border-radius: 1rem;
   background-color: var(--navBar);
 }
@@ -50,7 +49,6 @@ header {
 .nav-links > a {
   text-decoration: none;
   color: white;
-  /* border: 1px solid red; */
   border-radius: 0.5rem;
   padding: 0.5rem;
 }
@@ -78,4 +76,8 @@ header {
   width: 100px;
   height: 100px;
   border: 3px solid hsl(0, 0%, 30%);
+}
+
+.icon {
+  font-size: 3rem;
 }
