@@ -4,11 +4,12 @@ import BattleShipGIF from "../assets/battleship-test.gif";
 import ProjectsCard from "../layouts/ProjectsCard.astro";
 import GitHubIcon from "../icons/GitHubIcon.astro";
 import ExternalLink from "../icons/ExternalLink.astro";
+import KnightTravails from "../assets/knightTravails.gif";
 
 import "../styles/global.css";
 
 const pageTitle = "Projects";
-const technologies = ["HTML", "CSS", "JavaScript", "Jest", "Drag and Drop API"];
+const technologies = ["HTML", "CSS", "JavaScript"];
 ---
 
 <style>
@@ -46,8 +47,30 @@ const technologies = ["HTML", "CSS", "JavaScript", "Jest", "Drag and Drop API"];
     </p>
 
     {technologies.map((tech) => <p slot="technologies">{tech}</p>)}
+    {["Jest", "Drag and Drop API"].map((tech) => <p slot="technologies">{tech}</p>)}
 
+    <!-- Live preview and repo links can be a component or part of ProjectsCard -->
     <a slot="live-preview" class="links" href="https://elishamutang.github.io/battleship/" target="_blank"
+      ><ExternalLink class="link-icon" /></a
+    >
+    <a slot="gh-repo" class="links"><GitHubIcon class="link-icon" /></a>
+  </ProjectsCard>
+
+  <ProjectsCard title="Knight Travails">
+    <img slot="img" src={KnightTravails.src} alt="Knight Travails demo" width="100%" />
+    <p>
+      A project that demonstrates the <i style="color: white"><strong>Breadth-First-Search</strong></i> algorithm in action.
+    </p>
+    <br />
+    <p>
+      Created a simple GUI that allows users to pick a <strong>start</strong> and <strong>end</strong> point that will display
+      the shortest pathway of the knight on the board.
+    </p>
+
+    {technologies.map((tech) => <p slot="technologies">{tech}</p>)}
+    <p slot="technologies">Data Structures and Algorithms</p>
+
+    <a slot="live-preview" class="links" href="https://elishamutang.github.io/knight-travails/" target="_blank"
       ><ExternalLink class="link-icon" /></a
     >
     <a slot="gh-repo" class="links"><GitHubIcon class="link-icon" /></a>
