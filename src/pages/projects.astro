@@ -1,15 +1,33 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import BlogPost from "../components/BlogPost.astro";
-import CardLayout from "../layouts/CardLayout.astro";
-
-import BattleShipIcon from "../icons/BattleshipIcon.astro";
+import BattleShipGIF from "../assets/battleship-test.gif";
+import ProjectsCard from "../layouts/ProjectsCard.astro";
+import GitHubIcon from "../icons/GitHubIcon.astro";
+import ExternalLink from "../icons/ExternalLink.astro";
 
 import "../styles/global.css";
 
-const allPosts = await Astro.glob("./posts/*.md");
 const pageTitle = "Projects";
+const technologies = ["HTML", "CSS", "JavaScript", "Jest", "Drag and Drop API"];
 ---
+
+<style>
+  img {
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+  }
+
+  a.links {
+    border: 2px solid hsl(0, 0%, 40%);
+    background-color: hsl(0, 0%, 20%);
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .link-icon {
+    font-size: 2rem;
+  }
+</style>
 
 <BaseLayout pageTitle={pageTitle}>
   <nav slot="navbar">
@@ -19,7 +37,19 @@ const pageTitle = "Projects";
       <a href="/contact">Contact</a>
     </div>
   </nav>
-  <CardLayout title="Battleship">
-    <BattleShipIcon class="icon" style="color: white" slot="icon" />
-  </CardLayout>
+  <ProjectsCard title="Battleship">
+    <img slot="img" src={BattleShipGIF.src} alt="Battleship gameplay" width="100%" />
+    <p>Re-created the web version of the classic <strong>Battleship</strong> game!</p>
+    <br />
+    <p>
+      Implemented <strong>drag and drop</strong> as well as the ability to change the ships' orientation.
+    </p>
+
+    {technologies.map((tech) => <p slot="technologies">{tech}</p>)}
+
+    <a slot="live-preview" class="links" href="https://elishamutang.github.io/battleship/" target="_blank"
+      ><ExternalLink class="link-icon" /></a
+    >
+    <a slot="gh-repo" class="links"><GitHubIcon class="link-icon" /></a>
+  </ProjectsCard>
 </BaseLayout>
