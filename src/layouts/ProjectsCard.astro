@@ -1,0 +1,50 @@
+---
+import CardLayout from "./CardLayout.astro";
+import "../styles/global.css";
+
+const frontmatter = Astro.props;
+const technologyBorder = "hsl(0, 0%, 40%)";
+const technologyBackground = "hsl(0, 0%, 20%)";
+---
+
+<style define:vars={{ technologyBorder, technologyBackground }}>
+  .technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0.8rem 0 0.5rem 0;
+  }
+
+  .technologies :global(p) {
+    border: 2px solid var(--technologyBorder);
+    background-color: var(--technologyBackground);
+    border-radius: 0.4rem;
+    padding: 0.3rem;
+    color: white;
+  }
+
+  .live-and-repo {
+    width: 100%;
+    margin: 1rem 0 0 0;
+
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .live-and-repo :global(a) {
+    color: white;
+  }
+</style>
+
+<CardLayout title={frontmatter.title}>
+  <slot name="img" />
+  <slot />
+  <div class="technologies">
+    <slot name="technologies" />
+  </div>
+  <div class="live-and-repo">
+    <slot name="live-preview" />
+    <slot name="gh-repo" />
+  </div>
+</CardLayout>
