@@ -1,5 +1,4 @@
 ---
-import Header from "../components/Header.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/global.css";
 
@@ -32,6 +31,14 @@ const textCase = "uppercase";
 </style>
 
 <BaseLayout pageTitle={pageTitle}>
+  <nav slot="navbar">
+    <div class="nav-links">
+      <a href="/">Home </a>
+      <a href=" projects">Projects</a>
+      <a href="/contact" class="active">Contact</a>
+    </div>
+  </nav>
+
   <h2>... and my new Astro site!</h2>
 
   <p>

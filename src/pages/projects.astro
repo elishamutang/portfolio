@@ -1,9 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogPost from "../components/BlogPost.astro";
-import CardLayout from "../layouts/CardLayout.astro"
+import CardLayout from "../layouts/CardLayout.astro";
 
-import BattleShipIcon from "../icons/BattleshipIcon.astro"
+import BattleShipIcon from "../icons/BattleshipIcon.astro";
 
 import "../styles/global.css";
 
@@ -12,7 +12,14 @@ const pageTitle = "Projects";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
+  <nav slot="navbar">
+    <div class="nav-links">
+      <a href="/">Home </a>
+      <a href=" projects" class="active">Projects</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </nav>
   <CardLayout title="Battleship">
-    <BattleShipIcon class="icon" style="color: white"/>
+    <BattleShipIcon class="icon" style="color: white" slot="icon" />
   </CardLayout>
 </BaseLayout>
