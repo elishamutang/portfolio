@@ -85,3 +85,14 @@ header {
 nav {
   padding: 2rem;
 }
+
+p {
+  color: hsl(0, 0%, 70%);
+  letter-spacing: 0.05rem;
+  margin: 0;
+  line-height: 1.2;
+}
+
+strong {
+  color: hsl(0, 0%, 100%);
+}
