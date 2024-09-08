@@ -2,12 +2,11 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BattleShipGIF from "../assets/battleship-test.gif";
 import ProjectsCard from "../layouts/ProjectsCard.astro";
-import GitHubIcon from "../icons/GitHubIcon.astro";
-import ExternalLink from "../icons/ExternalLink.astro";
 import KnightTravails from "../assets/knightTravails.gif";
 import WeatherApp from "../assets/weatherApp-demo.gif";
 import ToDoList from "../assets/todo-demo.gif";
 import LiveAndRepo from "../components/LiveAndRepo.astro";
+import OrientalKopi from "../assets/oriental-kopi.png";
 
 import "../styles/global.css";
 
@@ -29,6 +28,7 @@ const technologies = ["HTML", "CSS", "JavaScript"];
     text-decoration: none;
     color: white;
     border-bottom: 2px solid hsl(0, 0%, 30%);
+    font-weight: bold;
   }
 </style>
 
@@ -48,7 +48,6 @@ const technologies = ["HTML", "CSS", "JavaScript"];
       Implemented <strong>drag and drop</strong> as well as the ability to change the ships' orientation.
     </p>
 
-    {technologies.map((tech) => <p slot="technologies">{tech}</p>)}
     {["Jest", "Drag and Drop API"].map((tech) => <p slot="technologies">{tech}</p>)}
 
     <LiveAndRepo
@@ -69,7 +68,6 @@ const technologies = ["HTML", "CSS", "JavaScript"];
       the shortest pathway of the knight on the board.
     </p>
 
-    {technologies.map((tech) => <p slot="technologies">{tech}</p>)}
     <p slot="technologies">Data Structures and Algorithms</p>
 
     <LiveAndRepo
@@ -86,8 +84,6 @@ const technologies = ["HTML", "CSS", "JavaScript"];
     <p>
       Weather data fetched from <a href="https://www.weatherapi.com/" target="_blank">WeatherAPI.</a>
     </p>
-
-    {technologies.map((tech) => <p slot="technologies">{tech}</p>)}
 
     <LiveAndRepo
       slot="live-and-repo"
@@ -107,12 +103,18 @@ const technologies = ["HTML", "CSS", "JavaScript"];
     <br />
     <p>All tasks are stored in local storage.</p>
 
-    {technologies.map((tech) => <p slot="technologies">{tech}</p>)}
-
     <LiveAndRepo
       slot="live-and-repo"
       liveLink="https://elishamutang.github.io/to-do-app/"
       repoLink="https://github.com/elishamutang/to-do-app"
     />
+  </ProjectsCard>
+
+  <ProjectsCard title="Oriental Kopi Website">
+    <img slot="img" src={OrientalKopi.src} alt="Oriental Kopi home page" class="project-demo" />
+    <p>
+      A clone of the existing <a href="https://www.orientalkopi.asia/" target="_blank">Oriental Kopi website</a>,
+      project was mainly to practice building a website using DOM manipulation in JavaScript.
+    </p>
   </ProjectsCard>
 </BaseLayout>
