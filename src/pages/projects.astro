@@ -5,6 +5,8 @@ import ProjectsCard from "../layouts/ProjectsCard.astro";
 import GitHubIcon from "../icons/GitHubIcon.astro";
 import ExternalLink from "../icons/ExternalLink.astro";
 import KnightTravails from "../assets/knightTravails.gif";
+import WeatherApp from "../assets/weatherApp-demo.gif";
+import ToDoList from "../assets/todo-demo.gif";
 
 import "../styles/global.css";
 
@@ -28,6 +30,16 @@ const technologies = ["HTML", "CSS", "JavaScript"];
   .link-icon {
     font-size: 2rem;
   }
+
+  .project-demo {
+    width: 100%;
+  }
+
+  p > a {
+    text-decoration: none;
+    color: white;
+    border-bottom: 2px solid hsl(0, 0%, 30%);
+  }
 </style>
 
 <BaseLayout pageTitle={pageTitle}>
@@ -39,7 +51,7 @@ const technologies = ["HTML", "CSS", "JavaScript"];
     </div>
   </nav>
   <ProjectsCard title="Battleship">
-    <img slot="img" src={BattleShipGIF.src} alt="Battleship gameplay" width="100%" />
+    <img slot="img" src={BattleShipGIF.src} alt="Battleship gameplay" class="project-demo" />
     <p>Re-created the web version of the classic <strong>Battleship</strong> game!</p>
     <br />
     <p>
@@ -57,7 +69,7 @@ const technologies = ["HTML", "CSS", "JavaScript"];
   </ProjectsCard>
 
   <ProjectsCard title="Knight Travails">
-    <img slot="img" src={KnightTravails.src} alt="Knight Travails demo" width="100%" />
+    <img slot="img" src={KnightTravails.src} alt="Knight Travails demo" class="project-demo" />
     <p>
       A project that demonstrates the <i style="color: white"><strong>Breadth-First-Search</strong></i> algorithm in action.
     </p>
@@ -71,6 +83,41 @@ const technologies = ["HTML", "CSS", "JavaScript"];
     <p slot="technologies">Data Structures and Algorithms</p>
 
     <a slot="live-preview" class="links" href="https://elishamutang.github.io/knight-travails/" target="_blank"
+      ><ExternalLink class="link-icon" /></a
+    >
+    <a slot="gh-repo" class="links"><GitHubIcon class="link-icon" /></a>
+  </ProjectsCard>
+
+  <ProjectsCard title="Weather App">
+    <img slot="img" src={WeatherApp.src} alt="Weather App demo" class="project-demo" />
+    <p>A responsive weather web application crafted using HTML, CSS and vanilla JavaScript.</p>
+    <br />
+    <p>
+      Weather data fetched from <a href="https://www.weatherapi.com/" target="_blank">WeatherAPI.</a>
+    </p>
+
+    {technologies.map((tech) => <p slot="technologies">{tech}</p>)}
+
+    <a slot="live-preview" class="links" href="https://elishamutang.github.io/weatherApp/" target="_blank"
+      ><ExternalLink class="link-icon" /></a
+    >
+    <a slot="gh-repo" class="links"><GitHubIcon class="link-icon" /></a>
+  </ProjectsCard>
+
+  <ProjectsCard title="To-Do List App">
+    <img slot="img" src={ToDoList.src} alt="To-Do List App" class="project-demo" />
+    <p>A minimal To-Do List application inspired by <a href="https://www.any.do/">any.do</a></p>
+    <br />
+    <p>
+      Users are directed to a Home Page where new tasks can be added or ticked off. In addition, users are able to
+      create new Lists as well.
+    </p>
+    <br />
+    <p>All tasks are stored in local storage.</p>
+
+    {technologies.map((tech) => <p slot="technologies">{tech}</p>)}
+
+    <a slot="live-preview" class="links" href="https://elishamutang.github.io/to-do-app/" target="_blank"
       ><ExternalLink class="link-icon" /></a
     >
     <a slot="gh-repo" class="links"><GitHubIcon class="link-icon" /></a>
