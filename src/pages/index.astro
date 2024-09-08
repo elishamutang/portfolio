@@ -67,8 +67,24 @@ const active = "active";
   </CardLayout>
   <CardLayout title="Education" class="education">
     <h3>The Odin Project <span>2023</span></h3>
+    <p>Full Stack Web Development</p>
+    <br />
     <h3>Curtin University <span>2018 - 2022</span></h3>
+    <p>Mechanical Engineering</p>
   </CardLayout>
 
   <Contact />
 </BaseLayout>
+
+<script>
+  const profile = document.querySelector(".profile");
+  const profileImg = document.getElementById("profile-pic");
+
+  profile.addEventListener("mouseenter", () => {
+    profileImg.classList.add("profile-hover");
+  });
+
+  profile.addEventListener("mouseleave", () => {
+    profileImg.classList.remove("profile-hover");
+  });
+</script>
