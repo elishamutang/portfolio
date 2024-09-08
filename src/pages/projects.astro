@@ -22,14 +22,6 @@ const pageTitle = "Projects";
   .project-demo {
     width: 100%;
   }
-
-  p > a {
-    text-decoration: none;
-    color: white;
-    border-bottom: 2px solid hsl(0, 0%, 30%);
-    font-weight: bold;
-    cursor: pointer;
-  }
 </style>
 
 <BaseLayout pageTitle={pageTitle}>
@@ -37,7 +29,6 @@ const pageTitle = "Projects";
     <div class="nav-links">
       <a href="/">Home </a>
       <a href=" projects" class="active">Projects</a>
-      <a href="/contact">Contact</a>
     </div>
   </nav>
   <ProjectsCard title="Battleship">
@@ -123,4 +114,5 @@ const pageTitle = "Projects";
       repoLink="https://github.com/elishamutang/restaurant-page"
     />
   </ProjectsCard>
+  <br />
 </BaseLayout>
