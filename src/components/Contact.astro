@@ -1,0 +1,77 @@
+---
+import EmailIcon from "../icons/EmailIcon.astro";
+import LinkedInIcon from "../icons/LinkedInIcon.astro";
+import GitHubIcon from "../icons/GitHubIcon.astro";
+
+import "../styles/global.css";
+import CardLayout from "../layouts/CardLayout.astro";
+
+const background = "hsl(0, 0%, 20%)";
+---
+
+<style define:vars={{ background }}>
+  p {
+    margin: 0;
+    color: white;
+  }
+
+  .contact {
+    background-color: var(--background);
+    border-radius: 1rem;
+    padding: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .contact:hover {
+    background-color: hsl(0, 0%, 50%);
+  }
+
+  .contact-icon {
+    font-size: 1.5rem;
+  }
+
+  .contact-container {
+    width: 100%;
+
+    display: grid;
+    grid-template-areas:
+      "email email"
+      "linkedin github";
+    gap: 0.5rem;
+  }
+
+  #email {
+    grid-area: email;
+  }
+
+  #linkedin {
+    grid-area: linkedin;
+  }
+
+  #github {
+    grid-area: github;
+  }
+</style>
+
+<CardLayout title="Contact Me">
+  <div class="contact-container">
+    <div class="contact" id="email">
+      <EmailIcon class="contact-icon" />
+      <p>elishamutang@outlook.com</p>
+    </div>
+
+    <div class="contact" id="linkedin">
+      <LinkedInIcon class="contact-icon" style="font-size: 1.2rem;" />
+      <p><a href="https://www.linkedin.com/in/elishamutang/">LinkedIn</a></p>
+    </div>
+
+    <div class="contact" id="github">
+      <GitHubIcon class="contact-icon" style="color: white" />
+      <p><a href="https://github.com/elishamutang">GitHub</a></p>
+    </div>
+  </div>
+</CardLayout>
