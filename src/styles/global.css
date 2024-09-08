@@ -108,3 +108,51 @@ p > a {
   font-weight: bold;
   cursor: pointer;
 }
+
+@media only screen and (min-width: 1024px) {
+  body {
+    display: grid;
+    grid-template-areas:
+      "navbar navbar navbar"
+      "intro intro contact"
+      "role profile footer"
+      "technologies profile footer"
+      "technologies education education";
+    margin: 2rem;
+    align-items: normal;
+  }
+
+  .card {
+    width: auto;
+  }
+
+  header {
+    grid-area: navbar;
+  }
+
+  .profile {
+    grid-area: profile;
+  }
+
+  .intro {
+    grid-area: intro;
+  }
+
+  .title {
+    grid-area: role;
+  }
+
+  .technologies {
+    grid-area: technologies;
+    justify-content: flex-start;
+  }
+
+  .education {
+    grid-area: education;
+  }
+
+  .contact {
+    grid-area: contact;
+    justify-content: flex-start;
+  }
+}
