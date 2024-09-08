@@ -9,20 +9,10 @@ import LiveAndRepo from "../components/LiveAndRepo.astro";
 import OrientalKopi from "../assets/oriental-kopi.png";
 
 import "../styles/global.css";
+import "../styles/projects.css";
 
 const pageTitle = "Projects";
 ---
-
-<style>
-  img {
-    border-radius: 0.5rem;
-    margin: 1rem 0;
-  }
-
-  .project-demo {
-    width: 100%;
-  }
-</style>
 
 <BaseLayout pageTitle={pageTitle}>
   <nav slot="navbar">
@@ -33,11 +23,13 @@ const pageTitle = "Projects";
   </nav>
   <ProjectsCard title="Battleship">
     <img slot="img" src={BattleShipGIF.src} alt="Battleship gameplay" class="project-demo" />
-    <p>Re-created the web version of the classic <strong>Battleship</strong> game!</p>
-    <br />
-    <p>
-      Implemented <strong>drag and drop</strong> as well as the ability to change the ships' orientation.
-    </p>
+    <div class="info">
+      <p>Re-created the web version of the classic <strong>Battleship</strong> game!</p>
+      <br />
+      <p>
+        Implemented <strong>drag and drop</strong> as well as the ability to change the ships' orientation.
+      </p>
+    </div>
 
     {["Jest", "Drag and Drop API"].map((tech) => <p slot="technologies">{tech}</p>)}
 
@@ -50,14 +42,16 @@ const pageTitle = "Projects";
 
   <ProjectsCard title="Knight Travails">
     <img slot="img" src={KnightTravails.src} alt="Knight Travails demo" class="project-demo" />
-    <p>
-      A project that demonstrates the <i style="color: white"><strong>Breadth-First-Search</strong></i> algorithm in action.
-    </p>
-    <br />
-    <p>
-      Created a simple GUI that allows users to pick a <strong>start</strong> and <strong>end</strong> point that will display
-      the shortest pathway of the knight on the board.
-    </p>
+    <div class="info">
+      <p>
+        A project that demonstrates the <i style="color: white"><strong>Breadth-First-Search</strong></i> algorithm in action.
+      </p>
+      <br />
+      <p>
+        Created a simple GUI that allows users to pick a <strong>start</strong> and <strong>end</strong> point that will
+        display the shortest pathway of the knight on the board.
+      </p>
+    </div>
 
     <p slot="technologies">Data Structures and Algorithms</p>
 
@@ -70,11 +64,13 @@ const pageTitle = "Projects";
 
   <ProjectsCard title="Weather App">
     <img slot="img" src={WeatherApp.src} alt="Weather App demo" class="project-demo" />
-    <p>A responsive weather web application crafted using HTML, CSS and vanilla JavaScript.</p>
-    <br />
-    <p>
-      Weather data fetched from <a href="https://www.weatherapi.com/" target="_blank">WeatherAPI.</a>
-    </p>
+    <div class="info">
+      <p>A responsive weather web application crafted using HTML, CSS and vanilla JavaScript.</p>
+      <br />
+      <p>
+        Weather data fetched from <a href="https://www.weatherapi.com/" target="_blank">WeatherAPI.</a>
+      </p>
+    </div>
 
     <LiveAndRepo
       slot="live-and-repo"
@@ -85,14 +81,16 @@ const pageTitle = "Projects";
 
   <ProjectsCard title="To-Do List App">
     <img slot="img" src={ToDoList.src} alt="To-Do List App" class="project-demo" />
-    <p>A minimal To-Do List application inspired by <a href="https://www.any.do/">any.do</a></p>
-    <br />
-    <p>
-      Users are directed to a Home Page where new tasks can be added or ticked off. In addition, users are able to
-      create new Lists as well.
-    </p>
-    <br />
-    <p>All tasks are stored in local storage.</p>
+    <div class="info">
+      <p>A minimal To-Do List application inspired by <a href="https://www.any.do/">any.do</a></p>
+      <br />
+      <p>
+        Users are directed to a Home Page where new tasks can be added or ticked off. In addition, users are able to
+        create new Lists as well.
+      </p>
+      <br />
+      <p>All tasks are stored in local storage.</p>
+    </div>
 
     <LiveAndRepo
       slot="live-and-repo"
@@ -103,10 +101,12 @@ const pageTitle = "Projects";
 
   <ProjectsCard title="Oriental Kopi Website">
     <img slot="img" src={OrientalKopi.src} alt="Oriental Kopi home page" class="project-demo" />
-    <p>
-      A clone of the existing <a href="https://www.orientalkopi.asia/" target="_blank">Oriental Kopi website</a>,
-      project was mainly to practice building a website using DOM manipulation in JavaScript.
-    </p>
+    <div class="info">
+      <p>
+        A clone of the existing <a href="https://www.orientalkopi.asia/" target="_blank">Oriental Kopi website</a>,
+        project was mainly to practice building a website using DOM manipulation in JavaScript.
+      </p>
+    </div>
 
     <LiveAndRepo
       slot="live-and-repo"
