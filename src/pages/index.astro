@@ -1,0 +1,78 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import profilePic from "../assets/profile-pic.jpeg";
+import CardLayout from "../layouts/CardLayout.astro";
+import Toolbox from "../components/Toolbox.astro";
+import Contact from "../components/Contact.astro";
+
+import { Image } from "astro:assets";
+
+const name = "Elisha Mutang";
+const title = "Software Developer";
+const pictureAlt = "profile-picture";
+const pictureId = "profile-pic";
+const active = "active";
+---
+
+<style>
+  h2,
+  h3 {
+    color: white;
+    margin: 0;
+  }
+
+  .profile {
+    gap: 0.5rem;
+  }
+
+  sup {
+    font-size: 0.8rem;
+  }
+
+  .title {
+    background-color: hsl(220, 60%, 40%);
+  }
+
+  span {
+    font-size: 1rem;
+    color: hsl(0, 0%, 50%);
+    margin-left: 0.2rem;
+  }
+</style>
+
+<BaseLayout pageTitle="home" active={active}>
+  <nav slot="navbar">
+    <div class="nav-links">
+      <a href="/" class="active">Home </a>
+      <a href=" projects">Projects</a>
+    </div>
+  </nav>
+  <div class="card profile">
+    <Image src={profilePic} alt={pictureAlt} id={pictureId} />
+    <h1>{name}</h1>
+  </div>
+  <div class="card title">
+    <h2>{title}</h2>
+  </div>
+  <CardLayout title="Who Am I?">
+    <p>
+      A mechanical engineer <i>turned </i>software developer from Australia.
+      <br />
+      <br />
+      I enjoy designing, problem-solving, and League of Legends <sup>(I main Katarina)</sup>.
+      <br />
+      <br />
+      This is my <strong>official</strong> portfolio where you can check out my projects and also be in touch with me!
+    </p>
+  </CardLayout>
+  <CardLayout title="My Toolbox">
+    <Toolbox />
+  </CardLayout>
+  <CardLayout title="Education">
+    <h3>The Odin Project <span>2023</span></h3>
+    <h3>Curtin University <span>2018 - 2022</span></h3>
+  </CardLayout>
+
+  <Contact />
+  <br />
+</BaseLayout>
