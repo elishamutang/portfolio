@@ -6,13 +6,6 @@ const fronmatter = Astro.props;
 ---
 
 <style>
-  .links {
-    border: 2px solid hsl(0, 0%, 40%);
-    background-color: hsl(0, 0%, 20%);
-    border-radius: 0.5rem;
-    padding: 0.5rem 1rem;
-  }
-
   .link-icon {
     font-size: 2rem;
   }
@@ -24,3 +17,17 @@ const fronmatter = Astro.props;
 <a href={fronmatter.repoLink} class="links" target="_blank">
   <GitHubIcon class="link-icon" />
 </a>
+
+<script>
+  const links = document.getElementsByTagName("a");
+
+  Array.from(links).forEach((link) => {
+    link.addEventListener("mouseenter", () => {
+      link.classList.add("links-hover");
+    });
+
+    link.addEventListener("mouseleave", () => {
+      link.classList.remove("links-hover");
+    });
+  });
+</script>
