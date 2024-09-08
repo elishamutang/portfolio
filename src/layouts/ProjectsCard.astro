@@ -3,12 +3,11 @@ import CardLayout from "./CardLayout.astro";
 import "../styles/global.css";
 
 const frontmatter = Astro.props;
-const technologyBorder = "hsl(0, 0%, 40%)";
 const technologyBackground = "hsl(0, 0%, 20%)";
 const technologies = ["HTML", "CSS", "JavaScript"];
 ---
 
-<style define:vars={{ technologyBorder, technologyBackground }}>
+<style define:vars={{ technologyBackground }}>
   .technologies {
     display: flex;
     flex-wrap: wrap;
