@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import profilePic from "../assets/profile-pic.jpeg";
 import CardLayout from "../layouts/CardLayout.astro";
 import Toolbox from "../components/Toolbox.astro";
+import Contact from "../components/Contact.astro";
 
 import { Image } from "astro:assets";
 
@@ -44,7 +45,6 @@ const active = "active";
     <div class="nav-links">
       <a href="/" class="active">Home </a>
       <a href=" projects">Projects</a>
-      <a href="/contact">Contact</a>
     </div>
   </nav>
   <div class="card profile">
@@ -72,5 +72,7 @@ const active = "active";
     <h3>The Odin Project <span>2023</span></h3>
     <h3>Curtin University <span>2018 - 2022</span></h3>
   </CardLayout>
+
+  <Contact />
   <br />
 </BaseLayout>
