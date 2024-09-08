@@ -1,0 +1,26 @@
+---
+import ExternalLink from "../icons/ExternalLink.astro";
+import GitHubIcon from "../icons/GitHubIcon.astro";
+
+const fronmatter = Astro.props;
+---
+
+<style>
+  .links {
+    border: 2px solid hsl(0, 0%, 40%);
+    background-color: hsl(0, 0%, 20%);
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .link-icon {
+    font-size: 2rem;
+  }
+</style>
+
+<a href={fronmatter.liveLink} class="links" target="_blank">
+  <ExternalLink class="link-icon" />
+</a>
+<a href={fronmatter.repoLink} class="links" target="_blank">
+  <GitHubIcon class="link-icon" />
+</a>
