@@ -124,10 +124,10 @@ p > a {
     display: grid;
     grid-template-areas:
       "navbar navbar navbar"
-      "intro intro contact"
-      "role profile footer"
-      "technologies profile footer"
-      "technologies education education";
+      "intro intro education"
+      "role profile education"
+      "technologies profile contact"
+      "technologies footer contact";
     margin: 2rem;
     align-items: normal;
   }
@@ -159,10 +159,25 @@ p > a {
 
   .education {
     grid-area: education;
+    justify-content: flex-start;
   }
 
   .contact {
     grid-area: contact;
     justify-content: flex-start;
+  }
+
+  footer {
+    grid-area: footer;
+  }
+
+  .card:hover:not(.card.title) {
+    border: 1px solid var(--accent);
+    transition: 0.3s;
+  }
+
+  #profile-pic.profile-hover {
+    border: 3px solid var(--accent);
+    transition: 1s;
   }
 }
