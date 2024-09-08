@@ -1,0 +1,44 @@
+.project-demo {
+  width: 100%;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+}
+
+@media screen and (min-width: 800px) {
+  body {
+    display: flex;
+  }
+
+  div.card {
+    display: grid;
+    grid-template-areas:
+      "title title title title"
+      "preview preview preview info"
+      "preview preview preview tech"
+      "preview preview preview links";
+    gap: 1rem;
+  }
+
+  .card h1 {
+    grid-area: title;
+  }
+
+  .card img {
+    grid-area: preview;
+    margin: 0;
+  }
+
+  .info {
+    grid-area: info;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .technologies {
+    grid-area: tech;
+  }
+
+  .live-and-repo {
+    grid-area: links;
+  }
+}
