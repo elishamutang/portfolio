@@ -7,9 +7,10 @@ import "../styles/global.css";
 import CardLayout from "../layouts/CardLayout.astro";
 
 const background = "hsl(0, 0%, 20%)";
+const accent = "hsl(220, 60%, 40%)";
 ---
 
-<style define:vars={{ background }}>
+<style define:vars={{ background, accent }}>
   p {
     margin: 0;
     color: white;
@@ -27,7 +28,13 @@ const background = "hsl(0, 0%, 20%)";
   }
 
   .contact:hover {
-    background-color: hsl(0, 0%, 50%);
+    background-color: var(--accent);
+    transition: 0.5s;
+  }
+
+  .contact:hover > p > a {
+    border-bottom: 2px solid white;
+    transition: 0.5s;
   }
 
   .contact-icon {
