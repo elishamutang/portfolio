@@ -11,7 +11,6 @@ import OrientalKopi from "../assets/oriental-kopi.png";
 import "../styles/global.css";
 
 const pageTitle = "Projects";
-const technologies = ["HTML", "CSS", "JavaScript"];
 ---
 
 <style>
@@ -29,6 +28,7 @@ const technologies = ["HTML", "CSS", "JavaScript"];
     color: white;
     border-bottom: 2px solid hsl(0, 0%, 30%);
     font-weight: bold;
+    cursor: pointer;
   }
 </style>
 
@@ -116,5 +116,11 @@ const technologies = ["HTML", "CSS", "JavaScript"];
       A clone of the existing <a href="https://www.orientalkopi.asia/" target="_blank">Oriental Kopi website</a>,
       project was mainly to practice building a website using DOM manipulation in JavaScript.
     </p>
+
+    <LiveAndRepo
+      slot="live-and-repo"
+      liveLink="https://elishamutang.github.io/restaurant-page/"
+      repoLink="https://github.com/elishamutang/restaurant-page"
+    />
   </ProjectsCard>
 </BaseLayout>
