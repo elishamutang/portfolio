@@ -7,6 +7,7 @@ import ExternalLink from "../icons/ExternalLink.astro";
 import KnightTravails from "../assets/knightTravails.gif";
 import WeatherApp from "../assets/weatherApp-demo.gif";
 import ToDoList from "../assets/todo-demo.gif";
+import LiveAndRepo from "../components/LiveAndRepo.astro";
 
 import "../styles/global.css";
 
@@ -18,17 +19,6 @@ const technologies = ["HTML", "CSS", "JavaScript"];
   img {
     border-radius: 0.5rem;
     margin: 1rem 0;
-  }
-
-  a.links {
-    border: 2px solid hsl(0, 0%, 40%);
-    background-color: hsl(0, 0%, 20%);
-    border-radius: 0.5rem;
-    padding: 0.5rem 1rem;
-  }
-
-  .link-icon {
-    font-size: 2rem;
   }
 
   .project-demo {
@@ -61,11 +51,11 @@ const technologies = ["HTML", "CSS", "JavaScript"];
     {technologies.map((tech) => <p slot="technologies">{tech}</p>)}
     {["Jest", "Drag and Drop API"].map((tech) => <p slot="technologies">{tech}</p>)}
 
-    <!-- Live preview and repo links can be a component or part of ProjectsCard -->
-    <a slot="live-preview" class="links" href="https://elishamutang.github.io/battleship/" target="_blank"
-      ><ExternalLink class="link-icon" /></a
-    >
-    <a slot="gh-repo" class="links"><GitHubIcon class="link-icon" /></a>
+    <LiveAndRepo
+      slot="live-and-repo"
+      liveLink="https://elishamutang.github.io/battleship/"
+      repoLink="https://github.com/elishamutang/battleship"
+    />
   </ProjectsCard>
 
   <ProjectsCard title="Knight Travails">
@@ -82,10 +72,11 @@ const technologies = ["HTML", "CSS", "JavaScript"];
     {technologies.map((tech) => <p slot="technologies">{tech}</p>)}
     <p slot="technologies">Data Structures and Algorithms</p>
 
-    <a slot="live-preview" class="links" href="https://elishamutang.github.io/knight-travails/" target="_blank"
-      ><ExternalLink class="link-icon" /></a
-    >
-    <a slot="gh-repo" class="links"><GitHubIcon class="link-icon" /></a>
+    <LiveAndRepo
+      slot="live-and-repo"
+      liveLink="https://elishamutang.github.io/knight-travails/"
+      repoLink="https://github.com/elishamutang/knight-travails"
+    />
   </ProjectsCard>
 
   <ProjectsCard title="Weather App">
@@ -98,10 +89,11 @@ const technologies = ["HTML", "CSS", "JavaScript"];
 
     {technologies.map((tech) => <p slot="technologies">{tech}</p>)}
 
-    <a slot="live-preview" class="links" href="https://elishamutang.github.io/weatherApp/" target="_blank"
-      ><ExternalLink class="link-icon" /></a
-    >
-    <a slot="gh-repo" class="links"><GitHubIcon class="link-icon" /></a>
+    <LiveAndRepo
+      slot="live-and-repo"
+      liveLink="https://elishamutang.github.io/weatherApp/"
+      repoLink="https://github.com/elishamutang/weatherApp"
+    />
   </ProjectsCard>
 
   <ProjectsCard title="To-Do List App">
@@ -117,9 +109,10 @@ const technologies = ["HTML", "CSS", "JavaScript"];
 
     {technologies.map((tech) => <p slot="technologies">{tech}</p>)}
 
-    <a slot="live-preview" class="links" href="https://elishamutang.github.io/to-do-app/" target="_blank"
-      ><ExternalLink class="link-icon" /></a
-    >
-    <a slot="gh-repo" class="links"><GitHubIcon class="link-icon" /></a>
+    <LiveAndRepo
+      slot="live-and-repo"
+      liveLink="https://elishamutang.github.io/to-do-app/"
+      repoLink="https://github.com/elishamutang/to-do-app"
+    />
   </ProjectsCard>
 </BaseLayout>
