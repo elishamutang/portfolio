@@ -6,7 +6,7 @@ Sleek, minmal, and responsive.
 
 ![Portfolio Home Page](/src/assets/homepage.png)
 
-Click (here)[https://elishamutang.netlify.app/] for a live demo.
+Click [here](https://elishamutang.netlify.app/) for a live demo.
 
 ## Crafted using:
 
@@ -16,5 +16,5 @@ Click (here)[https://elishamutang.netlify.app/] for a live demo.
 
 ## Inspired by
 
-- (Gianmarco)[https://github.com/Ladvace/astro-bento-portfolio]
-- (Leo Miranda)[https://github.com/leoMirandaa/portfolio]
+- [Gianmarco](https://github.com/Ladvace/astro-bento-portfolio)
+- [Leo Miranda](https://github.com/leoMirandaa/portfolio)
