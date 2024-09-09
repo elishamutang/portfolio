@@ -19,15 +19,17 @@ const fronmatter = Astro.props;
 </a>
 
 <script>
-  const links = document.getElementsByTagName("a");
+  document.addEventListener("astro:page-load", () => {
+    const links = document.getElementsByTagName("a");
 
-  Array.from(links).forEach((link) => {
-    link.addEventListener("mouseenter", () => {
-      link.classList.add("links-hover");
-    });
+    Array.from(links).forEach((link) => {
+      link.addEventListener("mouseenter", () => {
+        link.classList.add("links-hover");
+      });
 
-    link.addEventListener("mouseleave", () => {
-      link.classList.remove("links-hover");
+      link.addEventListener("mouseleave", () => {
+        link.classList.remove("links-hover");
+      });
     });
   });
 </script>
