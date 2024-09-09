@@ -1,16 +1,25 @@
 ---
 import AstroIcon from "../icons/AstroIcon.astro";
+
+const accent = "hsl(220, 60%, 40%)";
 ---
 
-<style>
+<style define:vars={{ accent }}>
   .card {
     flex-direction: row;
     gap: 0.3rem;
   }
+
+  a {
+    text-decoration: none;
+    color: var(--accent);
+    filter: brightness(2);
+    border: none;
+  }
 </style>
 
 <footer class="card">
-  <p>Crafted with <span>Astro</span></p>
+  <p>Crafted with <a href="https://astro.build/">Astro</a></p>
   <AstroIcon />
   <p>by Elisha.</p>
 </footer>
