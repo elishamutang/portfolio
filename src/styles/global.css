@@ -34,9 +34,9 @@ header {
   position: sticky;
   top: 0;
   background-color: transparent;
-  backdrop-filter: blur(5px) brightness(0.2);
   display: flex;
   justify-content: center;
+  z-index: 99;
 }
 
 .nav-links {
@@ -45,6 +45,7 @@ header {
   padding: 0.5rem;
   border-radius: 1rem;
   background-color: var(--navBar);
+  border: 1px solid var(--activeTab);
 }
 
 .nav-links > a {
@@ -136,8 +137,6 @@ p > a {
   position: absolute;
   top: 3.5rem;
   z-index: 99;
-  text-align: center;
-  font-weight: bold;
 }
 
 @media only screen and (min-width: 1024px) {
