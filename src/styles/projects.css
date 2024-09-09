@@ -1,3 +1,15 @@
+:root {
+  --background: hsl(0, 0%, 0%);
+  --activeTab: hsl(0, 0%, 35%);
+  --navBar: hsl(0, 0%, 15%);
+  --card: hsl(0, 0%, 10%);
+  --accent: hsl(220, 60%, 40%);
+}
+
+body {
+  background: radial-gradient(circle at top, var(--accent) 0%, var(--card) 60%, var(--background) 100%);
+}
+
 .project-demo {
   width: 100%;
   margin: 1rem 0;
