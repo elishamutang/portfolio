@@ -15,15 +15,38 @@ import GitIcon from "../icons/GitIcon.astro";
     flex-wrap: wrap;
     gap: 1rem;
   }
+
+  .icon-div {
+    position: relative;
+  }
 </style>
 
 <div class="tools">
-  <JavascriptIcon class="icon" />
-  <HtmlIcon class="icon" />
-  <CssIcon class="icon" />
-  <AstroIcon class="icon" />
-  <NodeJs class="icon" />
-  <JestIcon class="icon" />
-  <WebpackIcon class="icon" />
-  <GitIcon class="icon" />
+  <div class="icon-div" id="JavaScript">
+    <JavascriptIcon class="icon" />
+  </div>
+  <div class="icon-div" id="HTML"><HtmlIcon class="icon" /></div>
+  <div class="icon-div" id="CSS"><CssIcon class="icon" /></div>
+  <div class="icon-div" id="Astro"><AstroIcon class="icon" /></div>
+  <div class="icon-div" id="NodeJS"><NodeJs class="icon" /></div>
+  <div class="icon-div" id="Jest"><JestIcon class="icon" /></div>
+  <div class="icon-div" id="Webpack"><WebpackIcon class="icon" /></div>
+  <div class="icon-div" id="Git"><GitIcon class="icon" /></div>
 </div>
+
+<script>
+  const techIcons = document.getElementsByClassName("icon-div");
+  const techName = document.createElement("p");
+  techName.className = "techName";
+
+  Array.from(techIcons).forEach((icon) => {
+    icon.addEventListener("mouseenter", () => {
+      techName.textContent = icon.id;
+      icon.insertAdjacentElement("afterbegin", techName);
+    });
+
+    icon.addEventListener("mouseleave", () => {
+      techName.remove();
+    });
+  });
+</script>
