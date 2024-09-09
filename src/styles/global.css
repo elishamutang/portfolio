@@ -10,6 +10,7 @@
 
 html {
   font-family: "Helvetica";
+  min-height: 100%;
 }
 
 body {
@@ -21,7 +22,7 @@ body {
   position: relative;
   margin: 0 auto;
 
-  background-color: var(--background);
+  background: radial-gradient(circle at center, var(--accent) 0%, var(--card) 35%, var(--background) 100%);
 }
 
 h1 {
@@ -79,7 +80,7 @@ header {
 
   border-radius: 1rem;
   background-color: var(--card);
-  border: 1px solid var(--card);
+  border: 1px solid transparent;
 }
 
 #profile-pic {
