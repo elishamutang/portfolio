@@ -127,6 +127,19 @@ p > a {
   transition: 0.5s;
 }
 
+.techName {
+  border: 2px solid var(--accent);
+  background-color: var(--accent);
+  color: white;
+  border-radius: 0.5rem;
+  padding: 0.3rem;
+  position: absolute;
+  top: 3.5rem;
+  z-index: 99;
+  text-align: center;
+  font-weight: bold;
+}
+
 @media only screen and (min-width: 1024px) {
   body {
     display: grid;
