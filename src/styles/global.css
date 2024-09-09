@@ -68,11 +68,6 @@ header {
   background-color: var(--accent);
 }
 
-footer p > span {
-  color: var(--accent);
-  filter: brightness(2);
-}
-
 .card {
   width: 85%;
   display: flex;
