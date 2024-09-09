@@ -76,14 +76,17 @@ const pictureId = "profile-pic";
 </BaseLayout>
 
 <script>
-  const profile = document.querySelector(".profile");
-  const profileImg = document.getElementById("profile-pic");
+  // Make sure to add this to enable the script to run again after navigating to a different page.
+  document.addEventListener("astro:page-load", () => {
+    const profile = document.querySelector(".profile");
+    const profileImg = document.getElementById("profile-pic");
 
-  profile.addEventListener("mouseenter", () => {
-    profileImg.classList.add("profile-hover");
-  });
+    profile.addEventListener("mouseenter", () => {
+      profileImg.classList.add("profile-hover");
+    });
 
-  profile.addEventListener("mouseleave", () => {
-    profileImg.classList.remove("profile-hover");
+    profile.addEventListener("mouseleave", () => {
+      profileImg.classList.remove("profile-hover");
+    });
   });
 </script>

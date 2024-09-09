@@ -35,18 +35,21 @@ import GitIcon from "../icons/GitIcon.astro";
 </div>
 
 <script>
-  const techIcons = document.getElementsByClassName("icon-div");
-  const techName = document.createElement("p");
-  techName.className = "techName";
+  // astro:page-load re-runs the script.
+  document.addEventListener("astro:page-load", () => {
+    const techIcons = document.getElementsByClassName("icon-div");
+    const techName = document.createElement("p");
+    techName.className = "techName";
 
-  Array.from(techIcons).forEach((icon) => {
-    icon.addEventListener("mouseenter", () => {
-      techName.textContent = icon.id;
-      icon.insertAdjacentElement("afterbegin", techName);
-    });
+    Array.from(techIcons).forEach((icon) => {
+      icon.addEventListener("mouseenter", () => {
+        techName.textContent = icon.id;
+        icon.insertAdjacentElement("afterbegin", techName);
+      });
 
-    icon.addEventListener("mouseleave", () => {
-      techName.remove();
+      icon.addEventListener("mouseleave", () => {
+        techName.remove();
+      });
     });
   });
 </script>
