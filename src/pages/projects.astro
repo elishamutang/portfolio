@@ -7,6 +7,7 @@ import WeatherApp from "../assets/weatherApp-demo.gif";
 import ToDoList from "../assets/todo-demo.gif";
 import LiveAndRepo from "../components/LiveAndRepo.astro";
 import OrientalKopi from "../assets/oriental-kopi.png";
+import CVApp from "../assets/cvappdemo3.gif";
 
 import "../styles/global.css";
 import "../styles/projects.css";
@@ -19,6 +20,28 @@ import "../styles/projects.css";
       <a href=" projects" class="active">Projects</a>
     </div>
   </nav>
+  <ProjectsCard title="Craft Your CV">
+    <img slot="img" src={CVApp.src} alt="CV App main" class="project-demo" />
+    <div class="info">
+      <p><strong>Craft your CV in minutes!</strong></p>
+      <br />
+      <p>
+        Developed an online CV builder to enable users to create a quick and easy CV based on the template from Harvard
+        College.
+      </p>
+      <br />
+      <p>Features include <strong>Editing / Viewing modes, Reset</strong>, and <strong>Print to PDF</strong>.</p>
+    </div>
+
+    {["React"].map((tech) => <p slot="technologies">{tech}</p>)}
+
+    <LiveAndRepo
+      slot="live-and-repo"
+      liveLink="https://craftyourcv.netlify.app/"
+      repoLink="https://github.com/elishamutang/cv-application"
+    />
+  </ProjectsCard>
+
   <ProjectsCard title="Battleship">
     <img slot="img" src={BattleShipGIF.src} alt="Battleship gameplay" class="project-demo" />
     <div class="info">
