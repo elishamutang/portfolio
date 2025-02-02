@@ -12,6 +12,8 @@ import MemoryCard from "../assets/memorycardgamedemo.gif"
 
 import "../styles/global.css";
 import "../styles/projects.css";
+
+import { CircleArrowUp } from "lucide-astro";
 ---
 
 <BaseLayout>
@@ -157,4 +159,17 @@ import "../styles/projects.css";
       repoLink="https://github.com/elishamutang/restaurant-page"
     />
   </ProjectsCard>
+  <CircleArrowUp class="toTop" />
 </BaseLayout>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const toTopElem = document.querySelector(".toTop");
+
+    if (toTopElem) {
+      toTopElem.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+  });
+</script>
