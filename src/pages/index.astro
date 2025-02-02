@@ -51,21 +51,25 @@ const pictureId = "profile-pic";
   </div>
   <CardLayout title="Who Am I?" class="intro">
     <p>
-      Mechanical engineer <i>turned </i>software developer from Australia with a focus in full-stack web development.
-      <br />
-      <br />
-      I enjoy designing, problem-solving, and League of Legends <sup>(I main Katarina)</sup>.
+      Software developer from Australia with a focus in full-stack web development.
       <br />
       <br />
       This is my <strong>official</strong> portfolio where you can check out my projects and also get in touch with me for
       any web development work!
+      <br />
+      <br />
+      Need a website? I can help you with that! Contact me via email so we schedule for a quick call to discuss about how
+      I can help you with your project.
     </p>
   </CardLayout>
   <CardLayout title="My Toolbox" class="technologies">
     <Toolbox />
   </CardLayout>
   <CardLayout title="Education" class="education">
-    <h3>The Odin Project <span>2023</span></h3>
+    <h3>North Metropolitan TAFE <span>2025</span></h3>
+    <p>Advanced Programming</p>
+    <br />
+    <h3>The Odin Project <span>2023 - Current</span></h3>
     <p>Full Stack Web Development</p>
     <br />
     <h3>Curtin University <span>2018 - 2022</span></h3>
@@ -81,12 +85,14 @@ const pictureId = "profile-pic";
     const profile = document.querySelector(".profile");
     const profileImg = document.getElementById("profile-pic");
 
-    profile.addEventListener("mouseenter", () => {
-      profileImg.classList.add("profile-hover");
-    });
+    if (profile && profileImg) {
+      profile.addEventListener("mouseenter", () => {
+        profileImg.classList.add("profile-hover");
+      });
 
-    profile.addEventListener("mouseleave", () => {
-      profileImg.classList.remove("profile-hover");
-    });
+      profile.addEventListener("mouseleave", () => {
+        profileImg.classList.remove("profile-hover");
+      });
+    }
   });
 </script>
