@@ -213,6 +213,7 @@ p > a {
 @media only screen and (min-width: 1400px) {
   body {
     width: 70%;
+    animation: breathe 1.5s ease-in-out 0s alternate infinite;
   }
 }
 
@@ -225,5 +226,27 @@ p > a {
 @media only screen and (min-width: 1800px) {
   body {
     width: 55%;
+  }
+}
+
+@keyframes breathe {
+  0% {
+    background: radial-gradient(circle at center, var(--accent) 0%, var(--card) 35%, var(--background) 100%);
+  }
+
+  25% {
+    background: radial-gradient(circle at center, hsl(220, 60%, 35%) 0%, var(--card) 35%, var(--background) 100%);
+  }
+
+  50% {
+    background: radial-gradient(circle at center, hsl(220, 60%, 30%) 0%, var(--card) 35%, var(--background) 100%);
+  }
+
+  75% {
+    background: radial-gradient(circle at center, hsl(220, 60%, 35%) 0%, var(--card) 35%, var(--background) 100%);
+  }
+
+  100% {
+    background: radial-gradient(circle at center, hsl(220, 60%, 40%) 0%, var(--card) 35%, var(--background) 100%);
   }
 }
