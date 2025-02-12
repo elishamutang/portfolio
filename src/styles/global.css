@@ -46,8 +46,8 @@ header {
 .nav-links {
   display: flex;
   gap: 0.5rem;
-  padding: clamp(0.5rem, 1vw, 1rem);
-  border-radius: 1rem;
+  padding: clamp(0.5rem, 0.5vw, 1rem);
+  border-radius: clamp(1rem, 1vw, 2rem);
   background-color: var(--navBar);
   border: 1px solid var(--activeTab);
 }
@@ -55,8 +55,9 @@ header {
 .nav-links > a {
   text-decoration: none;
   color: white;
-  border-radius: 0.5rem;
+  border-radius: clamp(0.5rem, 0.5vw, 1rem);
   font-size: clamp(1rem, 1vw, 2rem);
+  padding: clamp(0.5rem, 0.5vw, 1rem);
 }
 
 .nav-links > a:hover:not(.active) {
