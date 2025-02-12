@@ -120,6 +120,10 @@ p > a {
   cursor: pointer;
 }
 
+p, p > a {
+  font-size: clamp(1rem, 1vw, 2rem);
+}
+
 .links {
   border: 2px solid hsl(0, 0%, 40%);
   background-color: hsl(0, 0%, 20%);
