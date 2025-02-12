@@ -8,7 +8,7 @@ import ToDoList from "../assets/todo-demo.gif";
 import LiveAndRepo from "../components/LiveAndRepo.astro";
 import OrientalKopi from "../assets/oriental-kopi.png";
 import CVApp from "../assets/cvappdemo3.gif";
-import MemoryCard from "../assets/memorycardgamedemo.gif"
+import MemoryCard from "../assets/memorycardgamedemo.gif";
 
 import "../styles/global.css";
 import "../styles/projects.css";
@@ -20,15 +20,13 @@ import { CircleArrowUp } from "lucide-astro";
   <nav slot="navbar">
     <div class="nav-links">
       <a href="/">Home </a>
-      <a href=" projects" class="active">Projects</a>
+      <a href="projects" class="active">Projects</a>
     </div>
   </nav>
   <ProjectsCard title="Friends Memory Game">
     <img slot="img" src={MemoryCard.src} alt="Memory Card Demo" class="project-demo" />
     <div class="info">
-      <p>
-        Developed a Friends themed Memory Card Game using React.
-      </p>
+      <p>Developed a Friends themed Memory Card Game using React.</p>
       <br />
       <p>To score a point in this game, you must <strong>not</strong> click on a GIF that has clicked previously.</p>
       <br />
