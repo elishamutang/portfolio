@@ -16,13 +16,7 @@ import "../styles/projects.css";
 import { CircleArrowUp } from "lucide-astro";
 ---
 
-<BaseLayout>
-  <nav slot="navbar">
-    <div class="nav-links">
-      <a href="/">Home </a>
-      <a href="projects" class="active">Projects</a>
-    </div>
-  </nav>
+<BaseLayout isProjects="true">
   <ProjectsCard title="Friends Memory Game">
     <img slot="img" src={MemoryCard.src} alt="Memory Card Demo" class="project-demo" />
     <div class="info">
