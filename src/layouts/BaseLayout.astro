@@ -1,8 +1,9 @@
 ---
 import ViewTransitions from "astro/components/ViewTransitions.astro";
 import Footer from "../components/Footer.astro";
-
 import "../styles/global.css";
+
+const { isHome, isProjects } = Astro.props;
 ---
 
 <html lang="en">
@@ -22,7 +23,12 @@ import "../styles/global.css";
   </head>
   <body>
     <header>
-      <slot name="navbar" />
+      <nav>
+        <div class="nav-links">
+          <a href="/" class={isHome && "active"}>Home</a>
+          <a href="projects" class={isProjects && "active"}>Projects</a>
+        </div>
+      </nav>
     </header>
     <slot />
     <Footer />
