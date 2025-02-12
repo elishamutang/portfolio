@@ -121,8 +121,9 @@ p > a {
   cursor: pointer;
 }
 
-p, p > a {
-  font-size: clamp(1rem, 1vw, 2rem);
+p,
+p > a {
+  font-size: clamp(1rem, 1vw, 1.5rem);
 }
 
 .links {
@@ -228,12 +229,6 @@ p, p > a {
 @media only screen and (min-width: 1600px) {
   body {
     width: 65%;
-  }
-}
-
-@media only screen and (min-width: 1800px) {
-  body {
-    width: 55%;
   }
 }
 
