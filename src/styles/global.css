@@ -25,7 +25,12 @@ body {
   position: relative;
   margin: 0 auto;
 
-  background: radial-gradient(circle at center, var(--accent) 0%, var(--card) 35%, var(--background) 100%);
+  background: radial-gradient(
+    circle at center,
+    var(--accent) 0%,
+    var(--card) 35%,
+    var(--background) 100%
+  );
 }
 
 h1 {
@@ -234,22 +239,47 @@ p > a {
 
 @keyframes breathe {
   0% {
-    background: radial-gradient(circle at center, var(--accent) 0%, var(--card) 35%, var(--background) 100%);
+    background: radial-gradient(
+      circle at center,
+      var(--accent) 0%,
+      var(--card) 35%,
+      var(--background) 100%
+    );
   }
 
   25% {
-    background: radial-gradient(circle at center, hsl(220, 60%, 35%) 0%, var(--card) 35%, var(--background) 100%);
+    background: radial-gradient(
+      circle at center,
+      hsl(220, 60%, 35%) 0%,
+      var(--card) 35%,
+      var(--background) 100%
+    );
   }
 
   50% {
-    background: radial-gradient(circle at center, hsl(220, 60%, 30%) 0%, var(--card) 35%, var(--background) 100%);
+    background: radial-gradient(
+      circle at center,
+      hsl(220, 60%, 30%) 0%,
+      var(--card) 35%,
+      var(--background) 100%
+    );
   }
 
   75% {
-    background: radial-gradient(circle at center, hsl(220, 60%, 35%) 0%, var(--card) 35%, var(--background) 100%);
+    background: radial-gradient(
+      circle at center,
+      hsl(220, 60%, 35%) 0%,
+      var(--card) 35%,
+      var(--background) 100%
+    );
   }
 
   100% {
-    background: radial-gradient(circle at center, hsl(220, 60%, 40%) 0%, var(--card) 35%, var(--background) 100%);
+    background: radial-gradient(
+      circle at center,
+      hsl(220, 60%, 40%) 0%,
+      var(--card) 35%,
+      var(--background) 100%
+    );
   }
 }
