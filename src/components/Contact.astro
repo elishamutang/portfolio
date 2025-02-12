@@ -38,7 +38,8 @@ const accent = "hsl(220, 60%, 40%)";
   }
 
   .contact-icon {
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 1.5vw, 2rem);
+    color: white;
   }
 
   .contact-container {
@@ -72,12 +73,12 @@ const accent = "hsl(220, 60%, 40%)";
     </div>
 
     <div class="contact" id="linkedin">
-      <LinkedInIcon class="contact-icon" style="font-size: 1.2rem;" />
+      <LinkedInIcon class="contact-icon" />
       <p><a href="https://www.linkedin.com/in/elishamutang/">LinkedIn</a></p>
     </div>
 
     <div class="contact" id="github">
-      <GitHubIcon class="contact-icon" style="color: white" />
+      <GitHubIcon class="contact-icon" />
       <p><a href="https://github.com/elishamutang">GitHub</a></p>
     </div>
   </div>
