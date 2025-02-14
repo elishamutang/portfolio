@@ -7,12 +7,7 @@
 }
 
 body {
-  background: radial-gradient(
-    circle at top,
-    var(--accent) 0%,
-    var(--card) 30%,
-    var(--background) 100%
-  );
+  background: radial-gradient(circle at top, var(--accent) 0%, var(--card) 30%, var(--background) 100%);
 }
 
 .project-demo {
