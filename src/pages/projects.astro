@@ -2,13 +2,14 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BattleShipGIF from "../assets/battleship-test.gif";
 import ProjectsCard from "../layouts/ProjectsCard.astro";
-import KnightTravails from "../assets/knightTravails.gif";
+import KnightTravails from "../assets/knightTravails.webp";
 import WeatherApp from "../assets/weatherApp-demo.gif";
 import ToDoList from "../assets/todo-demo.gif";
 import LiveAndRepo from "../components/LiveAndRepo.astro";
 import OrientalKopi from "../assets/oriental-kopi.png";
 import CVApp from "../assets/cvappdemo3.gif";
-import MemoryCard from "../assets/memorycardgamedemo.gif";
+import MemoryCard from "../assets/memorycardgamedemo.webp";
+import ShoppingCartDemo from "../assets/shopping-cart.png";
 
 import "../styles/global.css";
 import "../styles/projects.css";
@@ -17,6 +18,26 @@ import { CircleArrowUp } from "lucide-astro";
 ---
 
 <BaseLayout isProjects="true">
+  <ProjectsCard title="All In One Place">
+    <img slot="img" src={ShoppingCartDemo.src} alt="Shopping Cart Demo" class="project-demo" />
+    <div class="info">
+      <p>
+        Developed a single page application (SPA) with shopping cart functionality. Product data taken from
+        FakeStoreAPI.
+      </p>
+      <br />
+      <p>Pages include Homepage, Shop, Wishlist, and a Shopping Cart panel.</p>
+    </div>
+
+    {["React", "React Router"].map((tech) => <p slot="technologies">{tech}</p>)}
+
+    <LiveAndRepo
+      slot="live-and-repo"
+      liveLink="https://allinoneplace.netlify.app/"
+      repoLink="https://github.com/elishamutang/shopping-cart"
+    />
+  </ProjectsCard>
+
   <ProjectsCard title="Friends Memory Game">
     <img slot="img" src={MemoryCard.src} alt="Memory Card Demo" class="project-demo" />
     <div class="info">
