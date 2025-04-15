@@ -1,5 +1,5 @@
 ---
-import ViewTransitions from "astro/components/ViewTransitions.astro";
+import { ClientRouter } from "astro:transitions";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 
@@ -17,7 +17,7 @@ const { isHome, isProjects } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Elisha M.</title>
-    <ViewTransitions />
+    <ClientRouter />
     <script defer src="https://cloud.umami.is/script.js" data-website-id="85a0003c-1e28-4d78-aaba-e5c6c68c45a6"
     ></script>
   </head>
