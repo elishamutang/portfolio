@@ -12,7 +12,9 @@ Click [here](https://elishamutang.netlify.app/) for a live demo.
 
 - HTML
 - CSS
+- JavaScript
 - Astro
+- Iconify (for all icons)
 
 ## Inspired by
 
