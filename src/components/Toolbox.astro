@@ -1,13 +1,7 @@
 ---
-import JavascriptIcon from "../icons/JavascriptIcon.astro";
-import HtmlIcon from "../icons/HtmlIcon.astro";
-import CssIcon from "../icons/CSSIcon.astro";
-import AstroIcon from "../icons/AstroIcon.astro";
-import NodeJs from "../icons/NodeJS.astro";
-import JestIcon from "../icons/JestIcon.astro";
-import WebpackIcon from "../icons/WebpackIcon.astro";
-import GitIcon from "../icons/GitIcon.astro";
-import ReactIcon from "../icons/ReactIcon.astro";
+import generateToolIcon from "../scripts/toolbox.js";
+
+const iconInfo = generateToolIcon();
 ---
 
 <style>
@@ -23,17 +17,15 @@ import ReactIcon from "../icons/ReactIcon.astro";
 </style>
 
 <div class="tools">
-  <div class="icon-div" id="JavaScript">
-    <JavascriptIcon class="icon" />
-  </div>
-  <div class="icon-div" id="HTML"><HtmlIcon class="icon" /></div>
-  <div class="icon-div" id="CSS"><CssIcon class="icon" /></div>
-  <div class="icon-div" id="Astro"><AstroIcon class="icon" /></div>
-  <div class="icon-div" id="NodeJS"><NodeJs class="icon" /></div>
-  <div class="icon-div" id="Jest"><JestIcon class="icon" /></div>
-  <div class="icon-div" id="Webpack"><WebpackIcon class="icon" /></div>
-  <div class="icon-div" id="Git"><GitIcon class="icon" /></div>
-  <div class="icon-div" id="React"><ReactIcon class="icon"/></div>
+  {
+    iconInfo.map((icon) => {
+      return (
+        <div class="icon-div" id={icon.name}>
+          <icon.component.default class="icon" />
+        </div>
+      );
+    })
+  }
 </div>
 
 <script>
