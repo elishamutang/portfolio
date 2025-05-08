@@ -23,7 +23,11 @@ body {
   right: 5vw;
   width: clamp(2rem, 2vw, 10rem);
   height: clamp(2rem, 2vw, 10rem);
-  transition: color 0.3s;
+  transition: 0.3s;
+}
+
+.toTop-hidden {
+  visibility: hidden;
 }
 
 .toTop:hover {
