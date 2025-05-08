@@ -10,12 +10,6 @@ body {
   background: radial-gradient(circle at top, var(--accent) 0%, var(--card) 30%, var(--background) 100%);
 }
 
-.project-demo {
-  width: 100%;
-  margin: 1rem 0;
-  border-radius: 0.5rem;
-}
-
 .toTop {
   color: var(--activeTab);
   position: fixed;
