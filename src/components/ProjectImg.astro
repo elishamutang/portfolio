@@ -1,0 +1,40 @@
+---
+import { Image } from "astro:assets";
+
+const { src, alt, gif, ...attrs } = Astro.props;
+---
+
+{gif && <img src={gif.src} alt={`${alt}-gif`} />}
+<Image src={src} alt={alt} {...attrs} class={gif ? "project-img gif" : "project-img"} />
+
+<style>
+  img {
+    width: 100%;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    height: auto;
+  }
+
+  .project-img-hide {
+    opacity: 0;
+  }
+</style>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    // Detect hover on project image
+    const projectImgs = Array.from(document.getElementsByClassName("project-img gif"));
+
+    projectImgs.forEach((img) => {
+      img.addEventListener("mouseenter", () => {
+        img.classList.remove("project-img");
+        img.classList.add("project-img-hide");
+      });
+
+      img.addEventListener("mouseleave", () => {
+        img.classList.remove("project-img-hide");
+        img.classList.add("project-img");
+      });
+    });
+  });
+</script>
