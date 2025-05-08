@@ -1,25 +1,39 @@
 ---
+// Layouts and components
 import BaseLayout from "../layouts/BaseLayout.astro";
-import BattleShipGIF from "../assets/battleship-test.gif";
 import ProjectsCard from "../layouts/ProjectsCard.astro";
-import KnightTravails from "../assets/knightTravails.webp";
-import WeatherApp from "../assets/weatherApp-demo.gif";
-import ToDoList from "../assets/todo-demo.gif";
 import LiveAndRepo from "../components/LiveAndRepo.astro";
-import OrientalKopi from "../assets/oriental-kopi.png";
+import ProjectImg from "../components/ProjectImg.astro";
+
+// GIFs
+import BattleShipGIF from "../assets/battleship-test.gif";
+import KnightTravails from "../assets/knightTravails.webp";
+import WeatherApp from "../assets/weather-app-demo.webp";
+import ToDoList from "../assets/todo-demo.webp";
 import CVApp from "../assets/cvappdemo3.gif";
 import MemoryCard from "../assets/memorycardgamedemo.webp";
-import ShoppingCartDemo from "../assets/shopping-cart.png";
 
+// Static imgs
+import OrientalKopi from "../assets/oriental-kopi.png";
+import ShoppingCartDemo from "../assets/shopping-cart.png";
+import BattleShipStatic from "../assets/static/battleship-test.png";
+import CVAppStatic from "../assets/static/cvappdemo3.png";
+import MemoryCardStatic from "../assets/static/memorycardgamedemo.png";
+import KnightTravailsStatic from "../assets/static/knighttravails.png";
+import ToDoListStatic from "../assets/static/todo-demo.png";
+import WeatherAppStatic from "../assets/static/weatherApp-demo.png";
+
+// Styles
 import "../styles/global.css";
 import "../styles/projects.css";
 
+// Lucide icons
 import { CircleArrowUp } from "lucide-astro";
 ---
 
 <BaseLayout isProjects="true">
   <ProjectsCard title="All In One Place">
-    <img slot="img" src={ShoppingCartDemo.src} alt="Shopping Cart Demo" class="project-demo" />
+    <ProjectImg src={ShoppingCartDemo} alt="Shopping Cart Demo" slot="img" loading="lazy" />
     <div class="info">
       <p>
         Developed a single page application (SPA) with shopping cart functionality. Product data taken from
@@ -39,7 +53,7 @@ import { CircleArrowUp } from "lucide-astro";
   </ProjectsCard>
 
   <ProjectsCard title="Friends Memory Game">
-    <img slot="img" src={MemoryCard.src} alt="Memory Card Demo" class="project-demo" />
+    <ProjectImg src={MemoryCardStatic} alt="Memory Card Demo" gif={MemoryCard} slot="img" loading="lazy" />
     <div class="info">
       <p>Developed a Friends themed Memory Card Game using React.</p>
       <br />
@@ -58,7 +72,7 @@ import { CircleArrowUp } from "lucide-astro";
   </ProjectsCard>
 
   <ProjectsCard title="Craft Your CV">
-    <img slot="img" src={CVApp.src} alt="CV App main" class="project-demo" />
+    <ProjectImg src={CVAppStatic} gif={CVApp} alt="CV App Main" slot="img" loading="lazy" />
     <div class="info">
       <p><strong>Craft your CV in minutes!</strong></p>
       <br />
@@ -80,7 +94,7 @@ import { CircleArrowUp } from "lucide-astro";
   </ProjectsCard>
 
   <ProjectsCard title="Battleship">
-    <img slot="img" src={BattleShipGIF.src} alt="Battleship gameplay" class="project-demo" />
+    <ProjectImg src={BattleShipStatic} gif={BattleShipGIF} alt="BattleShip demo" slot="img" loading="lazy" />
     <div class="info">
       <p>Re-created the web version of the classic <strong>Battleship</strong> game!</p>
       <br />
@@ -99,7 +113,7 @@ import { CircleArrowUp } from "lucide-astro";
   </ProjectsCard>
 
   <ProjectsCard title="Knight Travails">
-    <img slot="img" src={KnightTravails.src} alt="Knight Travails demo" class="project-demo" />
+    <ProjectImg src={KnightTravailsStatic} gif={KnightTravails} alt="Knight Travails demo" slot="img" loading="lazy" />
     <div class="info">
       <p>
         A project that demonstrates the <i style="color: white"><strong>Breadth-First-Search</strong></i> algorithm in action.
@@ -121,7 +135,7 @@ import { CircleArrowUp } from "lucide-astro";
   </ProjectsCard>
 
   <ProjectsCard title="Weather App">
-    <img slot="img" src={WeatherApp.src} alt="Weather App demo" class="project-demo" />
+    <ProjectImg src={WeatherAppStatic} gif={WeatherApp} alt="Weather App Demo" slot="img" loading="lazy" />
     <div class="info">
       <p>A responsive weather web application crafted using HTML, CSS and vanilla JavaScript.</p>
       <br />
@@ -138,7 +152,7 @@ import { CircleArrowUp } from "lucide-astro";
   </ProjectsCard>
 
   <ProjectsCard title="To-Do List App">
-    <img slot="img" src={ToDoList.src} alt="To-Do List App" class="project-demo" />
+    <ProjectImg src={ToDoListStatic} gif={ToDoList} alt="To-Do List App" slot="img" loading="lazy" />
     <div class="info">
       <p>A minimal To-Do List application inspired by <a href="https://www.any.do/">any.do</a></p>
       <br />
@@ -158,7 +172,7 @@ import { CircleArrowUp } from "lucide-astro";
   </ProjectsCard>
 
   <ProjectsCard title="Oriental Kopi Website">
-    <img slot="img" src={OrientalKopi.src} alt="Oriental Kopi home page" class="project-demo" />
+    <ProjectImg src={OrientalKopi} alt="Oriental Kopi Website" slot="img" loading="lazy" />
     <div class="info">
       <p>
         A clone of the existing <a href="https://www.orientalkopi.asia/" target="_blank">Oriental Kopi website</a>,
