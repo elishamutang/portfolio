@@ -186,7 +186,7 @@ import { CircleArrowUp } from "lucide-astro";
       repoLink="https://github.com/elishamutang/restaurant-page"
     />
   </ProjectsCard>
-  <CircleArrowUp class="toTop-hidden" />
+  <CircleArrowUp class="toTop hidden" />
 </BaseLayout>
 
 <script>
@@ -195,7 +195,7 @@ import { CircleArrowUp } from "lucide-astro";
     const vh = document.querySelector("html").clientHeight;
 
     // Target hidden to top element.
-    const toTopElem = document.querySelector(".toTop-hidden");
+    const toTopElem = document.querySelector(".toTop");
 
     toTopElem.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -205,11 +205,9 @@ import { CircleArrowUp } from "lucide-astro";
       const scrollLength = document.querySelector("html").scrollTop;
 
       if (scrollLength >= vh) {
-        toTopElem.classList.remove("toTop-hidden");
-        toTopElem.classList.add("toTop");
+        toTopElem.classList.remove("hidden");
       } else {
-        toTopElem.classList.remove("toTop");
-        toTopElem.classList.add("toTop-hidden");
+        toTopElem.classList.add("hidden");
       }
     });
   });

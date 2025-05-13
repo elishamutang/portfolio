@@ -20,8 +20,8 @@ body {
   transition: 0.3s;
 }
 
-.toTop-hidden {
-  visibility: hidden;
+.hidden {
+  opacity: 0;
 }
 
 .toTop:hover {
