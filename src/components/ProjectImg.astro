@@ -4,8 +4,10 @@ import { Image } from "astro:assets";
 const { src, alt, gif, ...attrs } = Astro.props;
 ---
 
-{gif && <img src={gif.src} alt={`${alt}-gif`} />}
-<Image src={src} alt={alt} {...attrs} class={gif ? "project-img gif" : "project-img"} />
+<div class="img-container">
+  <Image src={src} alt={alt} {...attrs} class="project-img" />
+  {gif && <img class="project-gif hide" src={gif.src} alt={`${alt}-gif`} />}
+</div>
 
 <style>
   img {
@@ -15,25 +17,36 @@ const { src, alt, gif, ...attrs } = Astro.props;
     height: auto;
   }
 
-  .project-img-hide {
-    opacity: 0;
+  .hide {
+    display: none;
+  }
+
+  .show {
+    display: block;
   }
 </style>
 
 <script>
   document.addEventListener("astro:page-load", () => {
     // Detect hover on project image
-    const projectImgs = Array.from(document.getElementsByClassName("project-img gif"));
+    const projectImgs = Array.from(document.getElementsByClassName("img-container"));
 
-    projectImgs.forEach((img) => {
+    // Filter the ones with GIFs.
+    const projectImgsWithGifs = projectImgs.filter((img) => img.children.length > 1);
+
+    // Synchronise the showing and hiding of imgs / gifs.
+    projectImgsWithGifs.forEach((img) => {
+      const imageOnly = img.firstElementChild;
+      const gifOnly = img.lastElementChild;
+
       img.addEventListener("mouseenter", () => {
-        img.classList.remove("project-img");
-        img.classList.add("project-img-hide");
+        imageOnly.classList.toggle("hide");
+        gifOnly.classList.toggle("hide");
       });
 
       img.addEventListener("mouseleave", () => {
-        img.classList.remove("project-img-hide");
-        img.classList.add("project-img");
+        imageOnly.classList.toggle("hide");
+        gifOnly.classList.toggle("hide");
       });
     });
   });

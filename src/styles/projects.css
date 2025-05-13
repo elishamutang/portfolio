@@ -48,7 +48,7 @@ body {
     grid-area: title;
   }
 
-  .card img {
+  .card > .img-container {
     grid-area: preview;
     margin: 0;
   }
