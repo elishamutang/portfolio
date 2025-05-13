@@ -4,11 +4,6 @@ import { Image } from "astro:assets";
 const { src, alt, gif, ...attrs } = Astro.props;
 ---
 
-<div class="img-container">
-  <Image src={src} alt={alt} {...attrs} class="project-img" />
-  {gif && <img class="project-gif hide" src={gif.src} alt={`${alt}-gif`} />}
-</div>
-
 <style>
   img {
     width: 100%;
@@ -25,6 +20,11 @@ const { src, alt, gif, ...attrs } = Astro.props;
     display: block;
   }
 </style>
+
+<div class="img-container">
+  <Image src={src} alt={alt} {...attrs} class="project-img" />
+  {gif && <img class="project-gif hide" src={gif.src} alt={`${alt}-gif`} />}
+</div>
 
 <script>
   document.addEventListener("astro:page-load", () => {
