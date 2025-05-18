@@ -5,7 +5,7 @@ const { src, alt, gif, ...attrs } = Astro.props;
 ---
 
 <style>
-  img {
+  .project {
     width: 100%;
     margin: 1rem 0;
     border-radius: 0.5rem;
@@ -22,8 +22,14 @@ const { src, alt, gif, ...attrs } = Astro.props;
 </style>
 
 <div class="img-container">
-  <Image src={src} alt={alt} {...attrs} class="project-img" />
-  {gif && <img class="project-gif hide" src={gif.src} alt={`${alt}-gif`} />}
+  <Image src={src} alt={alt} {...attrs} class="project" />
+  {
+    gif && (
+      <video autoplay loop muted class="project hide">
+        <source src={gif} type="video/mp4" />
+      </video>
+    )
+  }
 </div>
 
 <script>
@@ -47,6 +53,8 @@ const { src, alt, gif, ...attrs } = Astro.props;
       img.addEventListener("mouseleave", () => {
         imageOnly.classList.toggle("hide");
         gifOnly.classList.toggle("hide");
+
+        gifOnly.currentTime = 0;
       });
     });
   });
