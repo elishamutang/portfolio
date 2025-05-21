@@ -14,16 +14,31 @@ const iconInfo = generateToolIcon();
   .icon-div {
     position: relative;
   }
+
+  .hide {
+    display: none;
+  }
+
+  .colored {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 </style>
 
 <div class="tools">
   {
-    iconInfo.map((icon) => {
+    Object.entries(iconInfo).map(([key, val]) => {
       return (
-        <div class="icon-div" id={icon.name}>
-          <icon.component.default class="icon" />
-        </div>
-      );
+          <div class="icon-div" id={key}>
+            {val.colored ? 
+              <val.base.default className="icon"/>
+              <val.colored.default className="icon colored hide"/>
+            :
+              <val.base.default className="icon"/>
+            }
+          </div>
+        )
     })
   }
 </div>
@@ -36,12 +51,25 @@ const iconInfo = generateToolIcon();
     techName.className = "techName";
 
     Array.from(techIcons).forEach((icon) => {
+
+      const coloredIcon = icon.querySelector('.colored')
+
       icon.addEventListener("mouseenter", () => {
+
+        if(coloredIcon) {
+          coloredIcon.classList.toggle('hide')
+        }
+
         techName.textContent = icon.id;
         icon.insertAdjacentElement("afterbegin", techName);
       });
 
       icon.addEventListener("mouseleave", () => {
+
+        if(coloredIcon) {
+          coloredIcon.classList.toggle('hide')
+        }
+
         techName.remove();
       });
     });
