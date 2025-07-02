@@ -10,30 +10,26 @@ export default function generateToolIcon() {
   const coloredIconRegex = /\/([^\/]+)IconColor\.astro$/;
 
   const tools = {};
-  const added = new Set()
+  const added = new Set();
 
   Object.entries(icons).forEach(([key, value], idx) => {
     const baseMatch = key.match(baseIconRegex);
-    const coloredMatch = key.match(coloredIconRegex)
+    const coloredMatch = key.match(coloredIconRegex);
 
-    const match = baseMatch ? baseMatch : coloredMatch
+    const match = baseMatch ? baseMatch : coloredMatch;
 
-    if(match) {
-
-      if(!added.has(match[1])) {
+    if (match) {
+      if (!added.has(match[1])) {
         tools[match[1]] = {
-          base: value
-        }
+          base: value,
+        };
 
-        added.add(match[1])
+        added.add(match[1]);
       } else {
-        tools[match[1]] = {...tools[match[1]], colored: value}
+        tools[match[1]] = { ...tools[match[1]], colored: value };
       }
-
     }
   });
-
-  console.log(tools)
 
   return tools;
 }
