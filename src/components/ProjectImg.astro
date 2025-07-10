@@ -35,10 +35,14 @@ const { src, alt, gif, ...attrs } = Astro.props;
 <script>
   document.addEventListener("astro:page-load", () => {
     // Detect hover on project image
-    const projectImgs = Array.from(document.getElementsByClassName("img-container"));
+    const projectImgs = Array.from(
+      document.getElementsByClassName("img-container")
+    );
 
     // Filter the ones with GIFs.
-    const projectImgsWithGifs = projectImgs.filter((img) => img.children.length > 1);
+    const projectImgsWithGifs = projectImgs.filter(
+      (img) => img.children.length > 1
+    );
 
     // Synchronise the showing and hiding of imgs / gifs.
     projectImgsWithGifs.forEach((img) => {

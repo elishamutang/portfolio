@@ -7,7 +7,12 @@
 }
 
 body {
-  background: radial-gradient(circle at top, var(--accent) 0%, var(--card) 30%, var(--background) 100%);
+  background: radial-gradient(
+    circle at top,
+    var(--accent) 0%,
+    var(--card) 30%,
+    var(--background) 100%
+  );
 }
 
 .toTop {
@@ -29,7 +34,7 @@ body {
   cursor: pointer;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1000px) {
   body {
     display: flex;
   }
@@ -51,6 +56,10 @@ body {
   .card > .img-container {
     grid-area: preview;
     margin: 0;
+
+    & .project {
+      margin: 0;
+    }
   }
 
   .info {
