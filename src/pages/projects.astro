@@ -1,7 +1,7 @@
 ---
 // Layouts and components
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ProjectsCard from "../layouts/ProjectsCard.astro";
+import ProjectCard from "../components/ProjectCard.astro";
 import LiveAndRepo from "../components/LiveAndRepo.astro";
 import ProjectImg from "../components/ProjectImg.astro";
 
@@ -32,161 +32,246 @@ import { CircleArrowUp } from "lucide-astro";
 ---
 
 <BaseLayout isProjects="true">
-  <ProjectsCard title="All In One Place">
-    <ProjectImg src={ShoppingCartDemo} alt="Shopping Cart Demo" slot="img" loading="lazy" />
-    <div class="info">
-      <p>
-        Developed a single page application (SPA) with shopping cart functionality. Product data taken from
-        FakeStoreAPI.
-      </p>
-      <br />
-      <p>Pages include Homepage, Shop, Wishlist, and a Shopping Cart panel.</p>
-    </div>
+  <section class="projects-container">
+    <ProjectCard title="All In One Place">
+      <ProjectImg
+        src={ShoppingCartDemo}
+        alt="Shopping Cart Demo"
+        slot="img"
+        loading="lazy"
+      />
+      <div class="info">
+        <p>
+          Developed a single page application (SPA) with shopping cart
+          functionality. Product data taken from FakeStoreAPI.
+        </p>
+        <br />
+        <p>
+          Pages include Homepage, Shop, Wishlist, and a Shopping Cart panel.
+        </p>
+      </div>
 
-    {["React", "React Router"].map((tech) => <p slot="technologies">{tech}</p>)}
+      {
+        ["React", "React Router"].map((tech) => (
+          <p slot="technologies">{tech}</p>
+        ))
+      }
 
-    <LiveAndRepo
-      slot="live-and-repo"
-      liveLink="https://allinoneplace.netlify.app/"
-      repoLink="https://github.com/elishamutang/shopping-cart"
-    />
-  </ProjectsCard>
+      <LiveAndRepo
+        slot="live-and-repo"
+        liveLink="https://allinoneplace.netlify.app/"
+        repoLink="https://github.com/elishamutang/shopping-cart"
+      />
+    </ProjectCard>
 
-  <ProjectsCard title="Friends Memory Game">
-    <ProjectImg src={MemoryCardStatic} alt="Memory Card Demo" gif={MemoryCard} slot="img" loading="lazy" />
-    <div class="info">
-      <p>Developed a Friends themed Memory Card Game using React.</p>
-      <br />
-      <p>To score a point in this game, you must <strong>not</strong> click on a GIF that has clicked previously.</p>
-      <br />
-      <p><strong>Give it a go and see if you can get 12 in a row!</strong></p>
-    </div>
+    <ProjectCard title="Friends Memory Game">
+      <ProjectImg
+        src={MemoryCardStatic}
+        alt="Memory Card Demo"
+        gif={MemoryCard}
+        slot="img"
+        loading="lazy"
+      />
+      <div class="info">
+        <p>Developed a Friends themed Memory Card Game using React.</p>
+        <br />
+        <p>
+          To score a point in this game, you must <strong>not</strong> click on a
+          GIF that has clicked previously.
+        </p>
+        <br />
+        <p><strong>Give it a go and see if you can get 12 in a row!</strong></p>
+      </div>
 
-    {["React"].map((tech) => <p slot="technologies">{tech}</p>)}
+      {["React"].map((tech) => <p slot="technologies">{tech}</p>)}
 
-    <LiveAndRepo
-      slot="live-and-repo"
-      liveLink="https://friendsmemorycard.netlify.app/"
-      repoLink="https://github.com/elishamutang/memory-card"
-    />
-  </ProjectsCard>
+      <LiveAndRepo
+        slot="live-and-repo"
+        liveLink="https://friendsmemorycard.netlify.app/"
+        repoLink="https://github.com/elishamutang/memory-card"
+      />
+    </ProjectCard>
 
-  <ProjectsCard title="Craft Your CV">
-    <ProjectImg src={CVAppStatic} gif={CVApp} alt="CV App Main" slot="img" loading="lazy" />
-    <div class="info">
-      <p><strong>Craft your CV in minutes!</strong></p>
-      <br />
-      <p>
-        Developed an online CV builder to enable users to create a quick and easy CV based on the template from Harvard
-        College.
-      </p>
-      <br />
-      <p>Features include <strong>Editing / Viewing modes, Reset</strong>, and <strong>Print to PDF</strong>.</p>
-    </div>
+    <ProjectCard title="Craft Your CV">
+      <ProjectImg
+        src={CVAppStatic}
+        gif={CVApp}
+        alt="CV App Main"
+        slot="img"
+        loading="lazy"
+      />
+      <div class="info">
+        <p><strong>Craft your CV in minutes!</strong></p>
+        <br />
+        <p>
+          Developed an online CV builder to enable users to create a quick and
+          easy CV based on the template from Harvard College.
+        </p>
+        <br />
+        <p>
+          Features include <strong>Editing / Viewing modes, Reset</strong>, and <strong
+            >Print to PDF</strong
+          >.
+        </p>
+      </div>
 
-    {["React"].map((tech) => <p slot="technologies">{tech}</p>)}
+      {["React"].map((tech) => <p slot="technologies">{tech}</p>)}
 
-    <LiveAndRepo
-      slot="live-and-repo"
-      liveLink="https://craftyourcv.netlify.app/"
-      repoLink="https://github.com/elishamutang/cv-application"
-    />
-  </ProjectsCard>
+      <LiveAndRepo
+        slot="live-and-repo"
+        liveLink="https://craftyourcv.netlify.app/"
+        repoLink="https://github.com/elishamutang/cv-application"
+      />
+    </ProjectCard>
 
-  <ProjectsCard title="Battleship">
-    <ProjectImg src={BattleShipStatic} gif={BattleShipMP4} alt="BattleShip demo" slot="img" loading="lazy" />
-    <div class="info">
-      <p>Re-created the web version of the classic <strong>Battleship</strong> game!</p>
-      <br />
-      <p>
-        Implemented <strong>drag and drop</strong> as well as the ability to change the ships' orientation.
-      </p>
-    </div>
+    <ProjectCard title="Battleship">
+      <ProjectImg
+        src={BattleShipStatic}
+        gif={BattleShipMP4}
+        alt="BattleShip demo"
+        slot="img"
+        loading="lazy"
+      />
+      <div class="info">
+        <p>
+          Re-created the web version of the classic <strong>Battleship</strong> game!
+        </p>
+        <br />
+        <p>
+          Implemented <strong>drag and drop</strong> as well as the ability to change
+          the ships' orientation.
+        </p>
+      </div>
 
-    {["Jest", "Drag and Drop API"].map((tech) => <p slot="technologies">{tech}</p>)}
+      {
+        ["Jest", "Drag and Drop API"].map((tech) => (
+          <p slot="technologies">{tech}</p>
+        ))
+      }
 
-    <LiveAndRepo
-      slot="live-and-repo"
-      liveLink="https://elishamutang.github.io/battleship/"
-      repoLink="https://github.com/elishamutang/battleship"
-    />
-  </ProjectsCard>
+      <LiveAndRepo
+        slot="live-and-repo"
+        liveLink="https://elishamutang.github.io/battleship/"
+        repoLink="https://github.com/elishamutang/battleship"
+      />
+    </ProjectCard>
 
-  <ProjectsCard title="Knight Travails">
-    <ProjectImg src={KnightTravailsStatic} gif={KnightTravails} alt="Knight Travails demo" slot="img" loading="lazy" />
-    <div class="info">
-      <p>
-        A project that demonstrates the <i style="color: white"><strong>Breadth-First-Search</strong></i> algorithm in action.
-      </p>
-      <br />
-      <p>
-        Created a simple GUI that allows users to pick a <strong>start</strong> and <strong>end</strong> point that will
-        display the shortest pathway of the knight on the board.
-      </p>
-    </div>
+    <ProjectCard title="Knight Travails">
+      <ProjectImg
+        src={KnightTravailsStatic}
+        gif={KnightTravails}
+        alt="Knight Travails demo"
+        slot="img"
+        loading="lazy"
+      />
+      <div class="info">
+        <p>
+          A project that demonstrates the <i style="color: white"
+            ><strong>Breadth-First-Search</strong></i
+          > algorithm in action.
+        </p>
+        <br />
+        <p>
+          Created a simple GUI that allows users to pick a <strong>start</strong
+          > and
+          <strong>end</strong> point that will display the shortest pathway of the
+          knight on the board.
+        </p>
+      </div>
 
-    <p slot="technologies">Data Structures and Algorithms</p>
+      <p slot="technologies">Data Structures and Algorithms</p>
 
-    <LiveAndRepo
-      slot="live-and-repo"
-      liveLink="https://elishamutang.github.io/knight-travails/"
-      repoLink="https://github.com/elishamutang/knight-travails"
-    />
-  </ProjectsCard>
+      <LiveAndRepo
+        slot="live-and-repo"
+        liveLink="https://elishamutang.github.io/knight-travails/"
+        repoLink="https://github.com/elishamutang/knight-travails"
+      />
+    </ProjectCard>
 
-  <ProjectsCard title="Weather App">
-    <ProjectImg src={WeatherAppStatic} gif={WeatherApp} alt="Weather App Demo" slot="img" loading="lazy" />
-    <div class="info">
-      <p>A responsive weather web application crafted using HTML, CSS and vanilla JavaScript.</p>
-      <br />
-      <p>
-        Weather data fetched from <a href="https://www.weatherapi.com/" target="_blank">WeatherAPI.</a>
-      </p>
-    </div>
+    <ProjectCard title="Weather App">
+      <ProjectImg
+        src={WeatherAppStatic}
+        gif={WeatherApp}
+        alt="Weather App Demo"
+        slot="img"
+        loading="lazy"
+      />
+      <div class="info">
+        <p>
+          A responsive weather web application crafted using HTML, CSS and
+          vanilla JavaScript.
+        </p>
+        <br />
+        <p>
+          Weather data fetched from <a
+            href="https://www.weatherapi.com/"
+            target="_blank">WeatherAPI.</a
+          >
+        </p>
+      </div>
 
-    <LiveAndRepo
-      slot="live-and-repo"
-      liveLink="https://elishamutang.github.io/weatherApp/"
-      repoLink="https://github.com/elishamutang/weatherApp"
-    />
-  </ProjectsCard>
+      <LiveAndRepo
+        slot="live-and-repo"
+        liveLink="https://elishamutang.github.io/weatherApp/"
+        repoLink="https://github.com/elishamutang/weatherApp"
+      />
+    </ProjectCard>
 
-  <ProjectsCard title="To-Do List App">
-    <ProjectImg src={ToDoListStatic} gif={ToDoList} alt="To-Do List App" slot="img" loading="lazy" />
-    <div class="info">
-      <p>A minimal To-Do List application inspired by <a href="https://www.any.do/">any.do</a></p>
-      <br />
-      <p>
-        Users are directed to a Home Page where new tasks can be added or ticked off. In addition, users are able to
-        create new Lists as well.
-      </p>
-      <br />
-      <p>All tasks are stored in local storage.</p>
-    </div>
+    <ProjectCard title="To-Do List App">
+      <ProjectImg
+        src={ToDoListStatic}
+        gif={ToDoList}
+        alt="To-Do List App"
+        slot="img"
+        loading="lazy"
+      />
+      <div class="info">
+        <p>
+          A minimal To-Do List application inspired by <a
+            href="https://www.any.do/">any.do</a
+          >
+        </p>
+        <br />
+        <p>
+          Users are directed to a Home Page where new tasks can be added or
+          ticked off. In addition, users are able to create new Lists as well.
+        </p>
+        <br />
+        <p>All tasks are stored in local storage.</p>
+      </div>
 
-    <LiveAndRepo
-      slot="live-and-repo"
-      liveLink="https://elishamutang.github.io/to-do-app/"
-      repoLink="https://github.com/elishamutang/to-do-app"
-    />
-  </ProjectsCard>
+      <LiveAndRepo
+        slot="live-and-repo"
+        liveLink="https://elishamutang.github.io/to-do-app/"
+        repoLink="https://github.com/elishamutang/to-do-app"
+      />
+    </ProjectCard>
 
-  <ProjectsCard title="Oriental Kopi Website">
-    <ProjectImg src={OrientalKopi} alt="Oriental Kopi Website" slot="img" loading="lazy" />
-    <div class="info">
-      <p>
-        A clone of the existing <a href="https://www.orientalkopi.asia/" target="_blank">Oriental Kopi website</a>,
-        project was mainly to practice building a website using DOM manipulation in JavaScript.
-      </p>
-    </div>
+    <ProjectCard title="Oriental Kopi Website">
+      <ProjectImg
+        src={OrientalKopi}
+        alt="Oriental Kopi Website"
+        slot="img"
+        loading="lazy"
+      />
+      <div class="info">
+        <p>
+          A clone of the existing <a
+            href="https://www.orientalkopi.asia/"
+            target="_blank">Oriental Kopi website</a
+          >, project was mainly to practice building a website using DOM
+          manipulation in JavaScript.
+        </p>
+      </div>
 
-    <LiveAndRepo
-      slot="live-and-repo"
-      liveLink="https://elishamutang.github.io/restaurant-page/"
-      repoLink="https://github.com/elishamutang/restaurant-page"
-    />
-  </ProjectsCard>
-  <CircleArrowUp class="toTop hidden" />
+      <LiveAndRepo
+        slot="live-and-repo"
+        liveLink="https://elishamutang.github.io/restaurant-page/"
+        repoLink="https://github.com/elishamutang/restaurant-page"
+      />
+    </ProjectCard>
+    <CircleArrowUp class="toTop hidden" />
+  </section>
 </BaseLayout>
 
 <script>
