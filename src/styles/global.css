@@ -24,6 +24,8 @@ body {
   gap: 1rem;
   position: relative;
   margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
 
   background: radial-gradient(
     circle at center,
@@ -154,12 +156,6 @@ p > a {
   z-index: 99;
 }
 
-@media only screen and (min-width: 768px) {
-  body {
-    max-width: 80%;
-  }
-}
-
 @media only screen and (min-width: 1024px) {
   body {
     display: grid;
@@ -171,7 +167,6 @@ p > a {
       "technologies footer contact";
     margin: 2rem;
     align-items: normal;
-    max-width: 100%;
   }
 
   .card {
@@ -224,29 +219,16 @@ p > a {
   }
 }
 
-@media only screen and (min-width: 1200px) {
-  body {
-    width: 85%;
-    margin: 2rem auto;
-  }
-}
-
 @media only screen and (min-width: 1400px) {
   body {
-    max-width: 80%;
     animation: breathe 1.5s ease-in-out 0s alternate infinite;
-  }
-}
-
-@media only screen and (min-width: 1600px) {
-  body {
-    max-width: 68%;
+    max-width: 1300px;
   }
 }
 
 @media only screen and (min-width: 2300px) {
   body {
-    max-width: 60%;
+    max-width: 1500px;
   }
 }
 
