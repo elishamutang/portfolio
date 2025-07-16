@@ -22,6 +22,7 @@ import MemoryCardStatic from "../assets/projects/static/memorycardgamedemo.png";
 import KnightTravailsStatic from "../assets/projects/static/knighttravails.png";
 import ToDoListStatic from "../assets/projects/static/todo-demo.png";
 import WeatherAppStatic from "../assets/projects/static/weatherApp-demo.png";
+import Video2Code from "../assets/projects/static/video2code.png";
 
 // Styles
 import "../styles/global.css";
@@ -33,6 +34,42 @@ import { CircleArrowUp } from "lucide-astro";
 
 <BaseLayout isProjects="true">
   <section class="projects-container">
+    <ProjectCard title="Video2Code.">
+      <ProjectImg
+        src={Video2Code}
+        alt="Video2Code Demo"
+        slot="img"
+        loading="lazy"
+      />
+      <div class="info">
+        <p>
+          A bare-bones prototype to detect code, extract it from a specific
+          frame, format and display it to the user.
+        </p>
+        <br />
+        <p>
+          Built using Svelte and Django REST Framework. A project to learn
+          self-hosting on a VPS using Docker and Nginx.
+        </p>
+      </div>
+
+      {
+        [
+          "Svelte",
+          "Django REST Framework",
+          "TailwindCSS",
+          "Docker",
+          "Nginx",
+        ].map((tech) => <p slot="technologies">{tech}</p>)
+      }
+
+      <LiveAndRepo
+        slot="live-and-repo"
+        liveLink="https://video2code.xyz"
+        repoLink="https://github.com/elishamutang/video2code"
+      />
+    </ProjectCard>
+
     <ProjectCard title="All In One Place">
       <ProjectImg
         src={ShoppingCartDemo}
@@ -276,24 +313,26 @@ import { CircleArrowUp } from "lucide-astro";
 
 <script>
   document.addEventListener("astro:page-load", () => {
-    // Get viewport height of HTML.
-    const vh = document.querySelector("html").clientHeight;
+    if (document.querySelector(".projects-container")) {
+      // Get viewport height of HTML.
+      const vh = document.querySelector("html").clientHeight;
 
-    // Target hidden to top element.
-    const toTopElem = document.querySelector(".toTop");
+      // Target hidden to top element.
+      const toTopElem = document.querySelector(".toTop");
 
-    toTopElem.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+      toTopElem.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
 
-    document.addEventListener("scroll", (e) => {
-      const scrollLength = document.querySelector("html").scrollTop;
+      document.addEventListener("scroll", (e) => {
+        const scrollLength = document.querySelector("html").scrollTop;
 
-      if (scrollLength >= vh) {
-        toTopElem.classList.remove("hidden");
-      } else {
-        toTopElem.classList.add("hidden");
-      }
-    });
+        if (scrollLength >= vh) {
+          toTopElem.classList.remove("hidden");
+        } else {
+          toTopElem.classList.add("hidden");
+        }
+      });
+    }
   });
 </script>
